@@ -19,9 +19,14 @@ const config: Config = {
         primaryBg: "#FFFFFF",
         secondaryBg: "#F8FAFF",
         secondaryText: "#1F60B2",
+        blue: "#4D9CFF",
+        lightBlue: "#EAF3FF",
+      },
+      daisyui: {
+        themes: ["light"],
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 };
 export default config;
