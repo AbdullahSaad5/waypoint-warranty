@@ -212,11 +212,11 @@ export default function Dealer() {
             <p className="">
               Total Warranty Services specializes in customized service
               contracts, protection and maintenance plans, and a wide range of
-              ancillary products to meet your customers’ needs. We can provide
-              almost any variation of these products, which are tried-and-true
-              marketing tools that can help boost your bottom line.Our goal was
-              to transform the automotive consumer experience by enhancing
-              products and creating a roadmap for what's next.
+              ancillary products to meet your customers&apos; needs. We can
+              provide almost any variation of these products, which are
+              tried-and-true marketing tools that can help boost your bottom
+              line.Our goal was to transform the automotive consumer experience
+              by enhancing products and creating a roadmap for what&apos;s next.
             </p>
             <button
               onClick={() => router.push("/products")}

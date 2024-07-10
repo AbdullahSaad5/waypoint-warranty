@@ -26,7 +26,7 @@ export default function Header() {
           <div className="hidden lg:min-h-fit  lg:flex items-center px-5">
             <ul className="flex md:flex-row md:items-center gap-2">
               {links.map((link) => (
-                <li>
+                <li key={link.name}>
                   <Link
                     key={link.name}
                     href={link.href}
@@ -52,7 +52,7 @@ export default function Header() {
               </summary>
               <ul className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                 {links.map((link) => (
-                  <li>
+                  <li key={link.name}>
                     <Link
                       key={link.name}
                       href={link.href}
