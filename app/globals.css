@@ -6,4 +6,22 @@
   .text-balance {
     text-wrap: balance;
   }
+  .custom-list {
+    @apply list-none;
+    padding: 0;
+  }
+
+  .custom-list li {
+    @apply pl-8 relative; /* Adjust padding based on the size of your icon */
+  }
+
+  .custom-list li::before {
+    content: "";
+    @apply absolute left-0 top-1/2 transform -translate-y-1/2;
+    width: 10px; /* Adjust based on the size of your icon */
+    height: 10px; /* Adjust based on the size of your icon */
+    background-image: url("../public/list-icon.png"); /* Path to your PNG */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }

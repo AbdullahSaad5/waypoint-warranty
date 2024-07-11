@@ -2,76 +2,31 @@
 
 import ProductBanner from "@/public/product-banner.png";
 import Image3 from "@/public/image-3.png";
-import Icon1 from "@/public/icon-1.png";
 import Image from "next/image";
+import productDetails from "../productDetails";
 import ProductCard from "../components/ProductCard";
 import { useRouter } from "next/navigation";
 
 export default function Products() {
   const router = useRouter();
-  type ProductCardProps = {
-    number: string;
-    icon: JSX.Element;
-    title: string;
-  };
-  const productCards: ProductCardProps[] = [
-    {
-      number: "01",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "02",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "03",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "04",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "05",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "06",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "07",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "08",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-    {
-      number: "09",
-      icon: <Image src={Icon1} alt="icon-1" width={74} height={52} />,
-      title: " Investment Advantage",
-    },
-  ];
+
   return (
     <>
       <main className="flex flex-col lg:flex-row justify-center items-center lg:space-x-10 p-5 px-10">
         <div className="flex flex-col justify-start items-center">
           <h1>
-            <p className="text-7xl font-bold">Way Point </p>
-            <span className="text-5xl font-bold">Warranty </span>
-            <span className="text-5xl font-bold text-blue">Products</span>
+            <p className="lg:text-7xl md:text-6xl text-5xl font-bold">
+              Way Point{" "}
+            </p>
+            <span className="lg:text-5xl md:text-4xl text-3xl font-bold">
+              Warranty{" "}
+            </span>
+            <span className="lg:text-5xl md:text-4xl text-3xl font-bold text-blue">
+              Products
+            </span>
           </h1>
-          <div className="bg-lightBlue items-end lg:w-[500px] p-6 rounded-xl my-8 flex justify-start lg:items-start flex-col">
-            <p className="pr-20">
+          <div className="bg-lightBlue items-center md:items-end lg:w-[500px] p-6 rounded-xl my-8 flex justify-start lg:items-start flex-col">
+            <p className="lg:pr-20 lg:text-left text-center text-sm lg:text-base">
               Total Warranty Services specializes in customized service
               contracts, protection and maintenance plans, and a wide range of
               ancillary products to meet your customers&apos; needs. We can
@@ -82,7 +37,7 @@ export default function Products() {
             </p>
             <button
               onClick={() => router.push("/products")}
-              className="bg-blue text-primaryText text-sm px-5 py-4 rounded-full mt-4"
+              className="bg-blue text-primaryText text-sm lg:text-base px-3 py-3 lg:px-5 lg:py-4 rounded-full mt-4 hover:bg-[#2A76CC]"
             >
               View Products
             </button>
@@ -159,12 +114,13 @@ export default function Products() {
       </section>
       <section className="bg-secondaryBg flex justify-center items-center py-5 px-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 md:col-span-1 md:gap-x-16 lg:gap-x-10 lg:gap-y-10 md:gap-y-6 gap-y-5 lg:col-span-1 my-12">
-          {productCards.map((product: ProductCardProps, index: number) => (
+          {productDetails.map((product, index: number) => (
             <ProductCard
-              key={index}
+              key={product.number}
               number={product.number}
               icon={product.icon}
               title={product.title}
+              onClick={() => router.push(`/products/${index}`)}
             />
           ))}
         </div>

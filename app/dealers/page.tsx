@@ -74,20 +74,20 @@ export default function Dealer() {
               stroke="#1F60B2"
               stroke-width="4"
               stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
             />
             <path
               d="M49.5 25H76.3799L80.625 31.5L76.3799 38H49.5V25ZM49.5 47.75H22.6201L18.375 54.25L22.6201 60.75H49.5V47.75Z"
               stroke="#1F60B2"
               stroke-width="4"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
             />
             <path
               d="M35.6667 80.25H63.3334"
               stroke="#1F60B2"
               stroke-width="4"
               stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
             />
           </g>
           <defs>
@@ -142,22 +142,24 @@ export default function Dealer() {
   ];
   return (
     <>
-      <main className="relative grid h-[calc(60vh-8rem)] min-h-[400px] w-full place-items-center object-cover">
+      <main className="relative grid h-[calc(60vh-8rem)] min-h-[420px] w-full place-items-center object-cover">
         <Image
           src={DealerBanner}
           alt="Dealer Banner"
           className="absolute left-0 top-0 z-[2] h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-[2] opacity-65"></div>
-        <div className="container z-[3] flex h-full items-center text-center lg:text-left flex-col lg:items-start text-primaryText px-4 pt-11">
-          <h1 className="text-4xl font-semibold">Become a Waypoint Dealer</h1>
-          <span className="max-w-lg text-md mt-2">
+        <div className="container z-[3] flex h-full items-center text-center lg:text-left flex-col lg:items-start text-primaryText px-4 pt-11 font-[Inter] lg:pl-10">
+          <h1 className="lg:text-4xl text-3xl font-semibold">
+            Become a Waypoint Dealer
+          </h1>
+          <span className="max-w-lg text-sm lg:text-base mt-4">
             As an administrative partner who was founded by dealers, we
             understand the specific needs of a dealer, and the ever-changing and
-            demanding needs of your customer.  We offer products and a claims
+            demanding needs of your customer. We offer products and a claims
             experience that will allow you to provide your customers with the
             products they want, and claims that allows you to focus on your
-            growth. Fill out the form below if you are interested in becoming a
+            growth. Fill out the form below if you are interested in becoming a
             trusted partner with Waypoint Warranty Solutions and learn more
             about us.
           </span>
@@ -208,8 +210,8 @@ export default function Dealer() {
           </h1>
         </div>
         <div className="flex flex-col justify-center items-center lg:flex-row lg:items-start lg:justify-around">
-          <div className="flex flex-col items-end lg:items-start justify-start w-[400px] mx-10">
-            <p className="">
+          <div className="flex flex-col items-center md:items-end lg:items-start justify-start lg:w-[400px] mx-10">
+            <p className="lg:text-left text-center">
               Total Warranty Services specializes in customized service
               contracts, protection and maintenance plans, and a wide range of
               ancillary products to meet your customers&apos; needs. We can
@@ -220,7 +222,7 @@ export default function Dealer() {
             </p>
             <button
               onClick={() => router.push("/products")}
-              className="bg-primary text-primaryText text-sm px-5 py-4 rounded-full my-4"
+              className="bg-primary text-primaryText text-sm lg:text-base px-3 py-3 lg:px-5 lg:py-4 rounded-full my-4 hover:bg-[#0D5F37]"
             >
               View Products
             </button>
@@ -251,6 +253,11 @@ export default function Dealer() {
         </div>
       </section>
       <section className="bg-primaryBg ">
+        <div className="flex justify-center items-center">
+          <h2 className="text-primary mt-6 lg:text-5xl md:text-4xl text-3xl font-semibold">
+            Signup as Dealer
+          </h2>
+        </div>
         <Form />
       </section>
     </>

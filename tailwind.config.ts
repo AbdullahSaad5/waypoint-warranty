@@ -21,6 +21,7 @@ const config: Config = {
         secondaryText: "#1F60B2",
         blue: "#4D9CFF",
         lightBlue: "#EAF3FF",
+        darkBlue: "#096AD8"
       },
       daisyui: {
         themes: ["light"],

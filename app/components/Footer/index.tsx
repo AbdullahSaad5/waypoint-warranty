@@ -44,18 +44,18 @@ export default function Footer() {
     <>
       <footer>
         <div className="w-full bg-primary sticky bottom-0 text-primaryText p-2">
-          <div className="flex items-center justify-center lg:justify-end lg:mr-36">
+          <div className="flex items-center justify-center lg:justify-end lg:mr-36 mx-2">
             <div className="">
-              <label className="my-1 text-sm">
+              <label className="my-1 text-sm text-center">
                 Subscribe to get latest news about products and offers.
               </label>
-              <div className="relative w-80 lg:w-96">
+              <div className="relative flex items-center w-72 lg:w-96 my-3 lg:my-1">
                 <input
                   type="text"
                   placeholder="Your email address"
-                  className="rounded-md w-full p-2 pr-16 py-3"
+                  className="rounded-md w-full lg:p-2 lg:pr-16 lg:py-3 p-2 pr-10 py-1"
                 />
-                <button className="absolute -right-1 top-1 mr-2 bg-primary text-primaryText p-2 rounded-md">
+                <button className="absolute -right-1 lg:top-1 py-1 mr-2 bg-primary text-primaryText lg:p-2 px-1 lg:py-2 lg:text-base text-sm rounded-md">
                   Subscribe
                 </button>
               </div>
@@ -106,8 +106,12 @@ export default function Footer() {
           </div>
           <Divider />
           <div className="flex flex-col lg:flex-row justify-around items-center">
-            <span>2024 WAY POINT WARRANTY.com, All rights reserved</span>
-            <span>Terms & Conditions . Privacy Notice</span>
+            <span className="text-sm text-center lg:text-lg md:text-base my-2">
+              2024 WAY POINT WARRANTY.com, All rights reserved
+            </span>
+            <span className="text-sm text-center lg:text-lg md:text-base my-2">
+              Terms & Conditions . Privacy Notice
+            </span>
           </div>
         </div>
       </footer>

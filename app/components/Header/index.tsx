@@ -50,7 +50,7 @@ export default function Header() {
               <summary className="btn m-1">
                 <Menu />
               </summary>
-              <ul className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+              <ul className="dropdown-content menu bg-base-100 rounded-box z-[999] w-52 p-2 shadow">
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
