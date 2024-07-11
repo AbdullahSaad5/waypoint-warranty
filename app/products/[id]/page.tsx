@@ -171,7 +171,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center my-5 lg:mx-8">
-        <h3 className="lg:text-4xl text text-primary font-medium my-5 min-w-[600px] text-center">
+        <h3 className="lg:text-4xl text-2xl text-primary font-medium my-5 min-w-[600px] text-center">
           Related Products
         </h3>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-y-8 mx-5 lg:gap-x-[3%] my-8">

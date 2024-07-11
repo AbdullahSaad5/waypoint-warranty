@@ -1,3 +1,9 @@
+import LandingPage from "./components/LandingPage";
+
 export default function Home() {
-  return <main> This is the main landing page </main>;
+  return (
+    <main>
+      <LandingPage />
+    </main>
+  );
 }
