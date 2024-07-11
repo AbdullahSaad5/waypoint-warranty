@@ -43,7 +43,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
       <main className="flex flex-col items-center lg:flex-row justify-center lg:items-start lg:gap-x-10 mx-5 lg:mx-10 my-5">
         <div className="flex lg:justify-start lg:items-start items-center justify-center flex-col">
           <h1>
-            <p className="font-bold lg:text-left text-center">
+            <div className="font-bold lg:text-left text-center">
               {words?.length > 2 ? (
                 <>
                   <p className="text-3xl md:text-4xl lg:text-5xl text-black">
@@ -57,7 +57,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
               ) : (
                 pageTitle
               )}
-            </p>
+            </div>
           </h1>
           <div className="m-4 px-2 min-w-[350px]">
             <p className="text-[#525151] text-sm lg:text-left text-center">

@@ -31,7 +31,7 @@
   }
 
   .custom-circle-list li {
-    @apply pl-12 relative; /* Adjust padding based on the size of your icon */
+    @apply pl-16 relative; /* Adjust padding based on the size of your icon */
     margin-left: 4rem; /* Adjust the margin based on your preference */
   }
 
@@ -44,5 +44,25 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin-right: 2rem; /* Adjust the margin between icon and text */
+  }
+
+  .triangle {
+    @apply absolute;
+    border-top: 12px solid green;
+    z-index: 1;
+    width: 240px;
+    height: 40px;
+    background-color: white;
+    transform: translate(-10%, 84%) rotate(-14deg);
+  }
+
+  .triangle-1 {
+    @apply absolute;
+    border-top: 12px solid green;
+    z-index: 1;
+    width: 240px;
+    height: 40px;
+    background-color: white;
+    transform: translate(85%, 78%) rotate(14deg);
   }
 }
