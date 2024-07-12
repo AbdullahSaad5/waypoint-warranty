@@ -1,4 +1,20 @@
 export default function Form() {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target;
+    const value = input.value;
+    const formattedValue = formatPhoneNumber(value);
+
+    if (formattedValue !== value) {
+      input.value = formattedValue;
+    }
+  };
+
+  const formatPhoneNumber = (value: string) => {
+    return value
+      .replace(/\D/g, "") // Remove all non-digit characters
+      .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3") // Format as (123) 456-7890
+      .slice(0, 14); // Limit the length to 14 characters
+  };
   return (
     <>
       <form className="flex items-center justify-center">
@@ -55,9 +71,10 @@ export default function Form() {
               Business Number<span className="text-red-600"> *</span>
             </label>
             <input
-              type="text"
-              placeholder="Business Number"
+              type="tel"
+              pattern="\(\d{3}\) \d{3}-\d{4}"
               required
+              placeholder="Business Number"
               className="rounded-xl w-full p-4 lg:pr-16 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
             />
           </div>

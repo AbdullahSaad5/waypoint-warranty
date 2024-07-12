@@ -5,6 +5,22 @@ import Image from "next/image";
 import MapImage from "@/public/lancaster-map.png";
 
 export default function Contact() {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.target;
+    const value = input.value;
+    const formattedValue = formatPhoneNumber(value);
+
+    if (formattedValue !== value) {
+      input.value = formattedValue;
+    }
+  };
+
+  const formatPhoneNumber = (value: string) => {
+    return value
+      .replace(/\D/g, "") // Remove all non-digit characters
+      .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3") // Format as (123) 456-7890
+      .slice(0, 14); // Limit the length to 14 characters
+  };
   return (
     <>
       <main className="relative grid h-[calc(60vh-8rem)] min-h-[400px] w-full place-items-center object-cover">
@@ -17,6 +33,9 @@ export default function Contact() {
         <div className="z-[3] flex items-center text-center text-primaryText">
           <h1 className="text-4xl lg:text-6xl font-bold">CONTACT US</h1>
         </div>
+        <span className="font-semibold absolute z-[3] text-xl text-primaryText lg:left-0 xl:left-0 xl:ml-8 2xl:left-0 2xl:ml-8 lg:ml-8 bottom-5">
+          Home {">"} Contact Us
+        </span>
       </main>
       <section className="bg-primaryBg p-1">
         <h4 className="flex flex-col justify-center items-center my-6 ">
@@ -65,10 +84,14 @@ export default function Contact() {
                 Phone Number<span className="text-red-600"> *</span>
               </label>
               <input
-                type="text"
-                placeholder="Phone Number"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(123) 456-7890"
+                pattern="\(\d{3}\) \d{3}-\d{4}"
                 required
                 className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
+                onInput={handleInput}
               />
             </div>
             <div className="col-span-2 lg:col-span-1 md:col-span-1">
@@ -101,7 +124,7 @@ export default function Contact() {
           </div>
         </form>
       </section>
-      <section className="bg-primaryBg">
+      <section className="bg-primaryBg lg:px-[100px] md:px-[60px] px-[30px]">
         <div className="flex lg:flex-row justify-center flex-col items-center lg:justify-around box-content my-10 mx-6 gap-x-3 gap-y-5">
           <div className="lg:w-80 lg:h-[180px] w-72 h-[150px] border border-gray-300 flex flex-row justify-between items-center">
             <div className="mx-5">

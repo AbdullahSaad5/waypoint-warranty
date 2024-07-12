@@ -51,11 +51,11 @@ export default function Footer() {
               </label>
               <div className="relative flex items-center w-72 lg:w-96 my-3 lg:my-1">
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Your email address"
-                  className="rounded-md w-full lg:p-2 lg:pr-16 lg:py-3 p-2 pr-10 py-1"
+                  className="rounded-md w-full lg:text-base text-sm lg:p-2 lg:pr-16 lg:py-3 text-black p-2 pr-10 py-1"
                 />
-                <button className="absolute -right-1 lg:top-1 py-1 mr-2 bg-primary text-primaryText lg:p-2 px-1 lg:py-2 lg:text-base text-sm rounded-md">
+                <button className="absolute -right-1 lg:top-1 xl:top-1 xl:p-2 py-1 mr-2 bg-primary lg:p-2 px-1 lg:py-2 xl:py-2 lg:text-base text-xs rounded-md">
                   Subscribe
                 </button>
               </div>

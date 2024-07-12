@@ -120,7 +120,7 @@ export default function Agent() {
             you are interested in becoming a trusted partner with Waypoint
             Warranty Solutions and learn more about us.
           </span>
-          <span className="font-semibold absolute bottom-5">
+          <span className="font-semibold text-xl absolute bottom-5">
             Home {">"} Agents
           </span>
         </div>

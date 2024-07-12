@@ -163,7 +163,7 @@ export default function Dealer() {
             trusted partner with Waypoint Warranty Solutions and learn more
             about us.
           </span>
-          <span className="font-semibold absolute bottom-5">
+          <span className="font-semibold absolute text-xl bottom-5">
             Home {">"} Dealers
           </span>
         </div>

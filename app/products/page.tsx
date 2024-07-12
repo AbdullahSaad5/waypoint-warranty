@@ -36,7 +36,7 @@ export default function Products() {
               by enhancing products and creating a roadmap for what&apos;s next.
             </p>
             <button
-              onClick={() => router.push("/products")}
+              onClick={() => router.push("/products#products")}
               className="bg-blue text-primaryText text-sm lg:text-base px-3 py-3 lg:px-5 lg:py-4 rounded-full mt-4 hover:bg-[#2A76CC]"
             >
               View Products
@@ -112,7 +112,10 @@ export default function Products() {
           </h1>
         </div>
       </section>
-      <section className="bg-secondaryBg flex justify-center items-center py-5 px-10">
+      <section
+        id="products"
+        className="bg-secondaryBg flex justify-center items-center py-5 px-10"
+      >
         <div className="grid lg:grid-cols-3 md:grid-cols-2 md:col-span-1 md:gap-x-16 lg:gap-x-10 lg:gap-y-10 md:gap-y-6 gap-y-5 lg:col-span-1 my-12">
           {productDetails.map((product, index: number) => (
             <ProductCard

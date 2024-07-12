@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AboutBanner from "@/public/about-banner.png";
+import AboutBanner1 from "@/public/about1-banner.png";
 import { useRouter } from "next/navigation";
 
 export default function About() {
@@ -9,15 +10,23 @@ export default function About() {
   return (
     <>
       <main className="relative grid h-[calc(60vh-8rem)] min-h-[400px] w-full place-items-center object-cover">
-        <div className="absolute inset-0 bg-[#05122380] z-[2] opacity-85"></div>
+        <Image
+          src={AboutBanner1}
+          alt="About Banner"
+          className="absolute left-0 top-0 z-[2] h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#05122380] z-[2] opacity-95"></div>
         <div className="z-[3] flex items-center text-center text-primaryText">
           <h1 className="text-4xl lg:text-6xl font-bold">ABOUT US</h1>
         </div>
+        <span className="font-semibold absolute z-[3] text-xl text-primaryText lg:left-0 xl:left-0 xl:ml-8 2xl:left-0 2xl:ml-8 lg:ml-8 bottom-5">
+          Home {">"} About Us
+        </span>
       </main>
       <section className="bg-primaryBg p-1">
         <div className="flex flex-col lg:flex-row justify-center items-center m-10 gap-y-4 gap-x-8">
           <div
-            className="flex flex-col min-h-max w-[250px] h-[400px] pb-5 px-5 rounded-2xl lg:px-8 lg:w-[410px] lg:h-[460px]"
+            className="flex flex-col group hover:bg-darkBlue min-h-max w-[250px] h-[400px] pb-5 px-5 rounded-2xl lg:px-8 lg:w-[410px] lg:h-[460px]"
             style={{
               boxShadow:
                 "0px -4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1)",
@@ -30,7 +39,7 @@ export default function About() {
                 viewBox="0 0 140 140"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-[120px] lg:w-[140px] lg:h-[140px]"
+                className="w-[120px] lg:w-[140px] lg:h-[140px] group-hover:brightness-0 group-hover:contrast-100 group-hover:invert"
               >
                 <path
                   d="M97.5756 110.518C99.5709 108.824 101.499 107.067 103.349 105.273C104.45 104.201 106.208 105.12 106.092 106.681C105.545 114.273 102.558 121.535 97.4722 127.205C93.7675 131.334 89.1321 135.869 83.8397 139.718C82.9454 140.365 81.7106 139.839 81.4672 138.735L78.5047 125.15C78.2857 124.154 78.7541 123.139 79.6301 122.683C83.0063 120.932 91.2126 115.941 97.5756 110.518Z"
@@ -92,14 +101,14 @@ export default function About() {
                 />
               </svg>
             </span>
-            <p className="text-center text-[#605B5B]">
+            <p className="text-center text-[#605B5B] group-hover:text-primaryText">
               Waypoint was founded by Dealers and Agents, for Dealers and Agents
               A guide to help you select the right products, structures and
               services for your customers.
             </p>
           </div>
           <div
-            className="flex flex-col min-h-max w-[250px] pb-5 px-5 shadow-md rounded-2xl lg:px-8 lg:w-[410px] lg:h-[460px]"
+            className="flex flex-col group hover:bg-darkBlue min-h-max w-[250px] pb-5 px-5 shadow-md rounded-2xl lg:px-8 lg:w-[410px] lg:h-[460px]"
             style={{
               boxShadow:
                 "0px -4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1)",
@@ -112,7 +121,7 @@ export default function About() {
                 viewBox="0 0 90 124"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-[70px] lg:w-[90px] lg:h-[124px]"
+                className="w-[70px] lg:w-[90px] lg:h-[124px] group-hover:brightness-0 group-hover:contrast-100 group-hover:invert"
               >
                 <path
                   d="M57.3562 102.75H32.6442C31.4769 102.75 30.5308 103.694 30.5308 104.86C30.5308 106.026 31.4769 106.976 32.6442 106.976H57.3562C58.5234 106.976 59.4683 106.027 59.4683 104.86C59.4683 103.694 58.5234 102.75 57.3562 102.75Z"
@@ -144,7 +153,7 @@ export default function About() {
                 />
               </svg>
             </span>
-            <p className="text-center text-[#605B5B]">
+            <p className="text-center text-[#605B5B] group-hover:text-primaryText">
               Our participation programs, for both dealer and agent partners,
               are the most revolutionary in the industry. Let us show you how to
               truly grow wealth like a participation program should with the
@@ -153,7 +162,7 @@ export default function About() {
             </p>
           </div>
           <div
-            className="flex flex-col min-h-max w-[250px] pb-5 px-5 shadow-md rounded-2xl lg:px-8 lg:w-[410px] lg:h-[460px]"
+            className="flex flex-col group hover:bg-darkBlue min-h-max w-[250px] pb-5 px-5 shadow-md rounded-2xl lg:px-8 lg:w-[410px] lg:h-[460px]"
             style={{
               boxShadow:
                 "0px -4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1)",
@@ -166,7 +175,7 @@ export default function About() {
                 viewBox="0 0 146 140"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-[100px] lg:w-[140px] lg:h-[120px]"
+                className="w-[100px] lg:w-[140px] lg:h-[120px] group-hover:brightness-0 group-hover:contrast-100 group-hover:invert"
               >
                 <g clip-path="url(#clip0_486_72)">
                   <path
@@ -195,7 +204,7 @@ export default function About() {
                 </defs>
               </svg>
             </span>
-            <p className="text-center text-[#605B5B]">
+            <p className="text-center text-[#605B5B] group-hover:text-primaryText">
               Our full suite of products that can accompany or replace
               traditional OEM offerings, give you the tools, technology and
               claims experience to provide additional revenue opportunities and
