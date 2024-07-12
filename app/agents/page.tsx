@@ -39,7 +39,7 @@ export default function Agent() {
           xmlns="http://www.w3.org/2000/svg"
           className="w-16 lg:w-20"
         >
-          <g clip-path="url(#clip0_251_702)">
+          <g clipPath="url(#clip0_251_702)">
             <path
               d="M85.2143 26.8125L60.8594 50.8779V26.8125H54.4534L31.1719 50.4265V11.9688H2.96875V101.031H92.0312V26.8125H85.2143ZM86.0938 95.0938H8.90625V17.9062H25.2344V57.9844H32.0584L54.9219 34.7944V57.9844H62.1144L86.0938 34.29V95.0938Z"
               fill="#1F60B2"
