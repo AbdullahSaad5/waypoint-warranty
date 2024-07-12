@@ -16,6 +16,7 @@ import ProductImage3 from "@/public/product-image3.png";
 import Image, { StaticImageData } from "next/image";
 
 type Products = {
+  id?: number;
   number: string;
   icon: JSX.Element;
   title: string;
@@ -29,6 +30,7 @@ type Products = {
 
 const productDetails: Products[] = [
   {
+    id: 0,
     number: "01",
     icon: <Image src={Icon1} alt="icon-1" className="w-16" />,
     title: "Waypoint Vehicle Service Contract",
@@ -58,6 +60,7 @@ const productDetails: Products[] = [
       "https://www.youtube.com/watch?v=8MygUVxCnH0&pp=ygUUY2FyIGluc3BlY3Rpb24gdmlkZW8%3D",
   },
   {
+    id: 1,
     number: "02",
     icon: <Image src={Icon2} alt="icon-2" className="w-20 h-12" />,
     title: "Pre-Owned Vehicle Service Contract",
@@ -82,6 +85,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/H6vFtE5sLCo",
   },
   {
+    id: 2,
     number: "03",
     icon: <Image src={Icon3} alt="icon-3" className="w-16 h-12" />,
     title: "Term Care Vehicle Service Contract",
@@ -108,6 +112,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/ghCP-wuB9qI",
   },
   {
+    id: 3,
     number: "04",
     icon: <Image src={Icon4} alt="icon-4" className="w-16" />,
     title: "Total Tech Vehicle Service Contract",
@@ -142,6 +147,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/yRgMmgGLLig",
   },
   {
+    id: 4,
     number: "05",
     icon: <Image src={Icon5} alt="icon-5" className="w-16" />,
     title: "EV Battery Vehicle Service Contract",
@@ -163,6 +169,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/mTzI08GE51I",
   },
   {
+    id: 5,
     number: "06",
     icon: <Image src={Icon6} alt="icon-6" className="w-14 h-14 mt-1" />,
     title: "Lifetime Limited Powertrain Warranty",
@@ -185,6 +192,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/orEtrXMyYW4",
   },
   {
+    id: 6,
     number: "07",
     icon: <Image src={Icon7} alt="icon-7" className="w-16 h-14" />,
     title: "Certified Pre-Owned Powertrain Warranty",
@@ -203,6 +211,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/orEtrXMyYW4",
   },
   {
+    id: 7,
     number: "08",
     icon: <Image src={Icon8} alt="icon-8" className="w-16 h-14" />,
     title: "Used Vehicle Limited Warranty",
@@ -235,6 +244,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/4EhArMOAL-I",
   },
   {
+    id: 8,
     number: "09",
     icon: <Image src={Icon9} alt="icon-9" className="w-16 h-14" />,
     title: "GAP",
@@ -253,6 +263,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/orEtrXMyYW4",
   },
   {
+    id: 9,
     number: "10",
     icon: <Image src={Icon10} alt="icon-10" className="w-16 h-14" />,
     title: "Pre-Paid Maintenance",
@@ -275,6 +286,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/ymk-eWhV-cs",
   },
   {
+    id: 10,
     number: "11",
     icon: <Image src={Icon11} alt="icon-11" className="w-16 h-14" />,
     title: "Tire and Road Hazard",
@@ -300,6 +312,7 @@ const productDetails: Products[] = [
     videoLink: "https://www.youtube.com/embed/H8lkf5bltng",
   },
   {
+    id: 11,
     number: "12",
     icon: <Image src={Icon12} alt="icon-12" className="w-16 h-14" />,
     title: "Theft and Ancillary Products",

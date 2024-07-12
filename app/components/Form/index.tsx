@@ -162,7 +162,7 @@ export default function Form() {
           <div className="col-span-2 ">
             <button
               type="submit"
-              className="bg-secondaryText text-primaryText w-full rounded-xl p-2 lg:p-4 lg:py-3 mt-5"
+              className="bg-secondaryText text-primaryText w-full rounded-xl p-2 lg:p-4 lg:py-3 mt-5 hover:bg-[#29578c]"
             >
               Submit
             </button>

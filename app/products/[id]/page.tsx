@@ -4,9 +4,11 @@ import productDetails from "@/app/productDetails";
 import Image, { StaticImageData } from "next/image";
 import ProductCard from "@/app/components/ProductCard";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 // Define the structure of a Product
 type Products = {
+  id?: number;
   number: string;
   icon: JSX.Element;
   title: string;
@@ -19,6 +21,7 @@ type Products = {
 };
 
 const SpecificProduct = ({ params }: { params: { id: string } }) => {
+  const router = useRouter();
   const index: number = parseInt(params.id);
   const product = productDetails[index] as Products;
   const pageTitle = product?.pageTitle;
@@ -40,7 +43,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
 
   return (
     <>
-      <main className="flex flex-col items-center lg:flex-row justify-center lg:items-start lg:gap-x-10 mx-5 lg:mx-10 my-5">
+      <main className="flex flex-col items-center lg:flex-row justify-center lg:items-start lg:gap-x-10 mx-5 lg:mx-24 xl:28 2xl:30 my-5">
         <div className="flex lg:justify-start lg:items-start items-center justify-center flex-col">
           <h1>
             <div className="font-bold lg:text-left text-center">
@@ -52,7 +55,11 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
                   <span className="text-2xl md:text-3xl lg:text-4xl text-primary">
                     {words[2]}
                   </span>{" "}
-                  {words?.slice(3).join(" ")}
+                  {words.length > 3 && (
+                    <p className="text-2xl md:text-3xl lg:text-4xl text-black">
+                      {words?.slice(3).join(" ")}
+                    </p>
+                  )}
                 </>
               ) : (
                 pageTitle
@@ -181,6 +188,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
               number={relatedProduct.number}
               icon={relatedProduct.icon}
               title={relatedProduct.title}
+              onClick={() => router.push(`/products/${relatedProduct.id}`)}
             />
           ))}
         </div>
