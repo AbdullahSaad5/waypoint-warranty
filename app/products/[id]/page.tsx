@@ -72,10 +72,10 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </p>
           </div>
           <div>
-            <h4 className="font-bold lg:text-2xl font-[Inter] text-xl">
+            <h4 className="font-bold lg:text-2xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6">
               Coverage Highlights
             </h4>
-            <div className="m-4 px-2 min-w-[350px]">
+            <div className="m-4 px-2 min-w-[350px] sm:w-[300px]">
               <ul className="custom-list">
                 {product.coverageHighlights?.map(
                   (highlight: string, index: number) => (
@@ -88,10 +88,10 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </div>
           </div>
           <div>
-            <h4 className="font-bold lg:text-4xl font-[Inter] text-2xl text-primary">
+            <h4 className="font-bold lg:text-4xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 text-primary">
               Eligibility
             </h4>
-            <div className="lg:m-4 px-2 min-w-[350px]">
+            <div className="lg:m-4 px-2 min-w-[350px] sm:w-[300px] mx-4">
               <ul className="custom-list">
                 {product.eligibility?.map(
                   (highlight: string, index: number) => (

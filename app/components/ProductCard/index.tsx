@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div>
       <div
-        className="card group rounded-sm bg-base-100 lg:w-[310px] shadow-md lg:h-[220px] hover:bg-darkBlue hover:cursor-pointer"
+        className="card group rounded-sm bg-base-100 lg:w-[310px] w-[290px] shadow-md lg:h-[220px] hover:bg-darkBlue hover:cursor-pointer"
         onClick={onClick}
       >
         <div className="flex justify-between items-center p-2 mx-2">
