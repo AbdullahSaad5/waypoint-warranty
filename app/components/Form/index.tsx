@@ -1,3 +1,5 @@
+"use client";
+
 export default function Form() {
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
@@ -49,9 +51,11 @@ export default function Form() {
               Phone Number<span className="text-red-600"> *</span>
             </label>
             <input
-              type="text"
+              type="tel"
               placeholder="Phone Number"
+              pattern="\(\d{3}\) \d{3}-\d{4}"
               required
+              onInput={handleInput}
               className="rounded-xl w-full p-4 lg:pr-16 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
             />
           </div>
@@ -72,9 +76,10 @@ export default function Form() {
             </label>
             <input
               type="tel"
+              placeholder="Business Number"
               pattern="\(\d{3}\) \d{3}-\d{4}"
               required
-              placeholder="Business Number"
+              onInput={handleInput}
               className="rounded-xl w-full p-4 lg:pr-16 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
             />
           </div>
@@ -140,8 +145,9 @@ export default function Form() {
             <input
               type="number"
               placeholder="Zip Code"
+              min={0}
               required
-              className="rounded-xl w-full p-4 lg:pr-16 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
+              className="rounded-xl w-full p-4 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
             />
           </div>
           <div className="col-span-2">

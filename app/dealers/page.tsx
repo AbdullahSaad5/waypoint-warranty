@@ -72,20 +72,20 @@ export default function Dealer() {
             <path
               d="M49.5 18.5V78.625"
               stroke="#1F60B2"
-              stroke-width="4"
-              stroke-linecap="round"
+              strokeWidth="4"
+              strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M49.5 25H76.3799L80.625 31.5L76.3799 38H49.5V25ZM49.5 47.75H22.6201L18.375 54.25L22.6201 60.75H49.5V47.75Z"
               stroke="#1F60B2"
-              stroke-width="4"
+              strokeWidth="4"
               strokeLinejoin="round"
             />
             <path
               d="M35.6667 80.25H63.3334"
               stroke="#1F60B2"
-              stroke-width="4"
+              strokeWidth="4"
               stroke-linecap="round"
               strokeLinejoin="round"
             />
