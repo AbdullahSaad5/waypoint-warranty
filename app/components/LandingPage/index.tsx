@@ -41,7 +41,10 @@ export default function LandingPage() {
           <p className="text-primaryText lg:text-2xl text-xl font-thin font-[Inter]">
             Customers
           </p>
-          <button className="bg-secondaryText text-primaryText text-sm lg:text-base px-3 py-2 lg:px-4 lg:py-3 rounded-md mt-4 hover:bg-[#2A76CC]">
+          <button
+            onClick={() => router.push("/products")}
+            className="bg-secondaryText text-primaryText text-sm lg:text-base px-3 py-2 lg:px-4 lg:py-3 rounded-md mt-4 hover:bg-[#2A76CC]"
+          >
             Explore our Products
           </button>
         </div>
@@ -51,6 +54,7 @@ export default function LandingPage() {
           <Card
             image={CardImage1}
             title="Dealers"
+            path="/dealers"
             description="In addition to next-level protection products, we offer custom branded collateral that can promote retention and drive customers back to your service bays."
             icon={
               <svg
@@ -68,6 +72,7 @@ export default function LandingPage() {
           <Card
             image={CardImage2}
             title="Agents"
+            path="/agents"
             description="In addition to next-level protection products, we offer custom branded collateral that can promote retention and drive customers back to your service bays."
             icon={
               <svg
@@ -87,6 +92,7 @@ export default function LandingPage() {
           <Card
             image={CardImage3}
             title="Products"
+            path="/products"
             description="In addition to next-level protection products, we offer custom branded collateral that can promote retention and drive customers back to your service bays."
             icon={
               <svg

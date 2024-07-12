@@ -65,4 +65,82 @@
     background-color: white;
     transform: translate(85%, 78%) rotate(14deg);
   }
+
+  @media (min-width: 300px) and (max-width: 768px) {
+    .triangle {
+      width: 200px;
+      transform: translate(-11%, 79%) rotate(-14deg);
+    }
+    .triangle-1 {
+      width: 175px;
+    }
+  }
+
+  @media (width: 768px) {
+    .triangle {
+      width: 240px;
+      transform: translate(-4%, 79%) rotate(-14deg);
+    }
+    .triangle-1 {
+      width: 220px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .triangle-1 {
+      transform: translate(75%, 78%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .triangle {
+      width: 180px;
+    }
+    .triangle-1 {
+      width: 200px;
+      transform: translate(58%, 87%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1276px) {
+    .triangle {
+      width: 210px;
+    }
+    .triangle-1 {
+      transform: translate(73%, 112%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1276px) and (max-width: 1327px) {
+    .triangle {
+      width: 220px;
+    }
+    .triangle-1 {
+      transform: translate(73%, 102%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1327px) and (max-width: 1365px) {
+    .triangle-1 {
+      transform: translate(85%, 113%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1365px) {
+    .triangle-1 {
+      transform: translate(85%, 109%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1382px) {
+    .triangle-1 {
+      transform: translate(85%, 101%) rotate(14deg);
+    }
+  }
+
+  @media (min-width: 1419px) {
+    .triangle-1 {
+      transform: translate(85%, 75%) rotate(14deg);
+    }
+  }
 }

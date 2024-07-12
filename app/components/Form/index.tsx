@@ -7,7 +7,9 @@ export default function Form() {
           style={{ boxShadow: "inset 0 2px 4px rgba(0, 0, 0, 0.2)" }}
         >
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">First Name</label>
+            <label className="font-semibold ml-3">
+              First Name<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="First Name"
@@ -16,7 +18,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Last Name</label>
+            <label className="font-semibold ml-3">
+              Last Name<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="Last Name"
@@ -25,7 +29,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Phone Number</label>
+            <label className="font-semibold ml-3">
+              Phone Number<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="Phone Number"
@@ -34,7 +40,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Email</label>
+            <label className="font-semibold ml-3">
+              Email<span className="text-red-600"> *</span>
+            </label>
             <input
               type="email"
               placeholder="Email"
@@ -43,7 +51,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Business Number</label>
+            <label className="font-semibold ml-3">
+              Business Number<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="Business Number"
@@ -52,7 +62,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Business Email</label>
+            <label className="font-semibold ml-3">
+              Business Email<span className="text-red-600"> *</span>
+            </label>
             <input
               type="email"
               placeholder="Business Email"
@@ -61,7 +73,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2">
-            <label className="font-semibold ml-3">Business Address</label>
+            <label className="font-semibold ml-3">
+              Business Address<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="Business Address"
@@ -70,7 +84,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">City</label>
+            <label className="font-semibold ml-3">
+              City<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="City"
@@ -79,7 +95,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">State</label>
+            <label className="font-semibold ml-3">
+              State<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="State"
@@ -88,7 +106,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Street</label>
+            <label className="font-semibold ml-3">
+              Street<span className="text-red-600"> *</span>
+            </label>
             <input
               type="text"
               placeholder="Street"
@@ -97,7 +117,9 @@ export default function Form() {
             />
           </div>
           <div className="col-span-2 lg:col-span-1 md:col-span-1">
-            <label className="font-semibold ml-3">Zip Code</label>
+            <label className="font-semibold ml-3">
+              Zip Code<span className="text-red-600"> *</span>
+            </label>
             <input
               type="number"
               placeholder="Zip Code"

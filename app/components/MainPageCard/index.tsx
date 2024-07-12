@@ -1,13 +1,24 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 interface CardProps {
   image: StaticImageData;
   title: string;
   description: string;
   icon: JSX.Element;
+  path: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, title, description, icon }) => {
+const Card: React.FC<CardProps> = ({
+  image,
+  title,
+  description,
+  icon,
+  path,
+}) => {
+  const router = useRouter();
   return (
     <div className="lg:w-[450px] w-[300px] md:w-[400px] h-max rounded-xl overflow-hidden shadow-lg bg-white relative">
       <div className="relative z-[1] w-full h-60">
@@ -40,7 +51,10 @@ const Card: React.FC<CardProps> = ({ image, title, description, icon }) => {
         </div>
       </div>
       <div className="px-6 pt-4 pb-2 mb-4 text-left">
-        <button className="bg-white hover:bg-gray-100 font-semibold py-2 px-4 border border-primary rounded-full shadow">
+        <button
+          onClick={() => router.push(path)}
+          className="bg-white hover:bg-gray-100 font-semibold py-2 px-4 border border-primary rounded-full shadow"
+        >
           Read More
         </button>
       </div>
