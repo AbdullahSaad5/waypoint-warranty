@@ -104,6 +104,20 @@ export default function Dealer() {
       title: "Trusted Expertise",
       description: "Partners with trusted providers, ensuring expert guidance and support for your success",
     },
+    {
+      number: "04",
+      icon: (
+        <svg viewBox="0 0 95 95" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-16 lg:w-20">
+          <path
+            d="M39.3748 84.9374V79.8749H54.5673V84.9374H39.3748ZM74.8123 41.9061C74.8154 46.0131 73.9064 50.0695 72.1511 53.7824C70.3957 57.4953 67.8378 60.7721 64.662 63.3762C61.6295 65.8771 59.6248 69.4158 59.6248 73.3493V74.8124H34.3123V73.6784C34.3123 69.8815 32.7783 66.1353 29.7864 63.7913C25.746 60.631 22.6585 56.4147 20.8653 51.6088C19.0722 46.8029 18.6432 41.5947 19.626 36.5601C21.6307 25.7669 30.2167 16.9328 40.9644 14.6901C45.0345 13.7971 49.2529 13.828 53.3095 14.7804C57.3661 15.7329 61.1575 17.5827 64.4048 20.1937C67.6521 22.8048 70.2728 26.1107 72.0739 29.8682C73.875 33.6257 74.8107 37.7393 74.8123 41.9061ZM31.781 44.4374C31.781 33.9732 37.7851 26.7186 46.9685 26.7186V21.6561C34.7527 21.6561 26.7185 31.366 26.7185 44.4374H31.781Z"
+            fill="#1F60B2"
+          />
+        </svg>
+      ),
+      title: "Subject Matter Expertise",
+      description:
+        "With partnerships with some of the most trusted and respected providers across industries, you can be certain that Waypoint will always act in your best interest, giving you access to the subject matter expertise and guidance that you need to focus on your business, your family, and sustainable growth.",
+    },
   ];
   return (
     <>
@@ -130,8 +144,8 @@ export default function Dealer() {
         <div className="flex flex-col justify-center items-center my-3">
           <h1 className="text-primary font-bold text-3xl lg:text-5xl my-4">Benefits For Dealers</h1>
         </div>
-        <div className="flex flex-col justify-center lg:justify-around items-center lg:flex-row ">
-          <div className="lg:mb-9 mb-5">
+        <div className="lg:grid lg:grid-cols-2 gap-3 my-10 flex flex-col justify-center items-center lg:items-stretch">
+          <div className="flex justify-center items-center lg:mb-9 mb-5">
             <Card
               number={cards[0].number}
               icon={cards[0].icon}
@@ -139,7 +153,7 @@ export default function Dealer() {
               description={cards[0].description}
             />
           </div>
-          <div className="lg:mb-9 mb-5 ">
+          <div className=" lg:mb-9 mb-5 h-[90%]">
             <Card
               number={cards[1].number}
               icon={cards[1].icon}
@@ -147,14 +161,20 @@ export default function Dealer() {
               description={cards[1].description}
             />
           </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <div className="lg:mb-9 mb-5">
+          <div className="flex justify-end items-center lg:mb-9 mb-5">
             <Card
               number={cards[2].number}
               icon={cards[2].icon}
               title={cards[2].title}
               description={cards[2].description}
+            />
+          </div>
+          <div className="flex justify-center items-center lg:mb-9 mb-5">
+            <Card
+              number={cards[3].number}
+              icon={cards[3].icon}
+              title={cards[3].title}
+              description={cards[3].description}
             />
           </div>
         </div>
@@ -166,11 +186,10 @@ export default function Dealer() {
         <div className="flex flex-col justify-center items-center lg:flex-row lg:items-start lg:justify-around">
           <div className="flex flex-col items-center md:items-end lg:items-start justify-start lg:w-[400px] mx-10">
             <p className="lg:text-left text-center">
-              Total Warranty Services specializes in customized service contracts, protection and maintenance plans, and
-              a wide range of ancillary products to meet your customers&apos; needs. We can provide almost any variation
-              of these products, which are tried-and-true marketing tools that can help boost your bottom line.Our goal
-              was to transform the automotive consumer experience by enhancing products and creating a roadmap for
-              what&apos;s next.
+              Waypoint Warranty Solutions specializes in customized service contracts, protection and maintenance plans,
+              and a wide range of ancillary products to meet your customers&apos; needs, which are tried-and-true
+              marketing tools that can help boost your bottom line. Our goal was to transform the automotive consumer
+              experience by enhancing products and creating a roadmap for what&apos;s next.
             </p>
             <button
               onClick={() => router.push("/products")}
@@ -206,7 +225,7 @@ export default function Dealer() {
       </section>
       <section className="bg-primaryBg ">
         <div className="flex justify-center items-center">
-          <h2 className="text-primary mt-6 lg:text-5xl md:text-4xl text-3xl font-semibold">Signup as Dealer</h2>
+          <h2 className="text-primary mt-6 lg:text-5xl md:text-4xl text-3xl font-semibold">Signup as a Dealer</h2>
         </div>
         <Form />
       </section>
