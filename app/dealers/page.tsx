@@ -86,7 +86,7 @@ export default function Dealer() {
               d="M35.6667 80.25H63.3334"
               stroke="#1F60B2"
               strokeWidth="4"
-              stroke-linecap="round"
+              strokeLinecap="round"
               strokeLinejoin="round"
             />
           </g>
@@ -117,8 +117,8 @@ export default function Dealer() {
               fill="#1F60B2"
             />
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M68.9849 32.5448L66.7849 30.6548L64.7549 30.8298L42.9549 56.5698L35.5299 45.9698L33.5299 45.6298L31.2149 47.2848L30.8699 49.2848L40.4149 62.9148L41.4999 63.5148L43.7849 63.6548L44.9549 63.1448L69.1299 34.5698L68.9849 32.5448Z"
               fill="#1F60B2"
             />
