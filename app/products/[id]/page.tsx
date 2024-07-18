@@ -46,17 +46,17 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
       <main className="flex flex-col items-center lg:flex-row justify-center lg:items-start lg:gap-x-10 mx-5 lg:mx-24 xl:28 2xl:30 my-5">
         <div className="flex lg:justify-start lg:items-start items-center justify-center flex-col">
           <h1>
-            <div className="font-bold lg:text-left text-center">
+            <div className="font-bold lg:text-left text-center text-primary">
               {words?.length > 2 ? (
                 <>
-                  <p className="text-3xl md:text-4xl lg:text-5xl text-black">
+                  <p className="text-3xl md:text-4xl lg:text-5xl">
                     {words?.slice(0, 2).join(" ")}
                   </p>{" "}
-                  <span className="text-2xl md:text-3xl lg:text-4xl text-primary">
+                  <span className="text-2xl md:text-3xl lg:text-4xl">
                     {words[2]}
                   </span>{" "}
                   {words.length > 3 && (
-                    <p className="text-2xl md:text-3xl lg:text-4xl text-black">
+                    <p className="text-2xl md:text-3xl lg:text-4xl ">
                       {words?.slice(3).join(" ")}
                     </p>
                   )}
@@ -72,7 +72,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </p>
           </div>
           <div>
-            <h4 className="font-bold lg:text-2xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6">
+            <h4 className="font-bold text-blue lg:text-2xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6">
               Coverage Highlights
             </h4>
             <div className="m-4 px-2 min-w-[350px] sm:w-[300px]">
@@ -88,7 +88,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </div>
           </div>
           <div>
-            <h4 className="font-bold lg:text-4xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 text-primary">
+            <h4 className="font-bold lg:text-4xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 text-blue">
               Eligibility
             </h4>
             <div className="lg:m-4 px-2 min-w-[350px] sm:w-[300px] mx-4">
@@ -137,33 +137,6 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </main>
-      <section className="flex flex-col justify-center items-center mx-8">
-        <h3 className="lg:text-4xl text-2xl text-primary font-medium my-5 lg:w-[600px] w-[300px] min-h-max text-center">
-          Revolution Electric Vehicle Service Contract
-        </h3>
-        <div
-          className="shadow-lg lg:my-10 lg:mx-20 lg:py-10 p-5 lg:px-10 mx-5 rounded-2xl min-h-max max-w-max"
-          style={{ boxShadow: "inset 0 2px 4px rgba(0, 0, 0, 0.2)" }}
-        >
-          <p className="text-[#746C6C] font-medium text-lg">
-            With a greater selection of makes and models and extended operating
-            ranges, there has never been a better time to own an electric
-            powered vehicle. In many cases, a traditional vehicle service
-            contract only covers the mechanical failure of the engine and
-            related parts. Revolution Electric VSC is designed specifically to
-            protect electric battery powered vehicles and the modern technology
-            and componentry within them.
-          </p>
-          <button className="bg-primary text-primaryText text-sm lg:text-base px-3 py-2 lg:px-4 lg:py-3 rounded-full my-4 hover:bg-[#0D5F37]">
-            Read More
-          </button>
-          <p className="font-medium text-2xl mt-10">Disclaimer:</p>
-          <p className="italic text-[#4F4D4D] text-sm">
-            Benefits included above are for example only. Coverage may vary by
-            state and dealer participation.
-          </p>
-        </div>
-      </section>
       <section className="flex flex-col justify-center items-center my-5 mx-5">
         <h3 className="lg:text-4xl text-3xl text-primary font-medium my-5 lg:w-[600px] w-[300px] min-h-max text-center">
           About Product

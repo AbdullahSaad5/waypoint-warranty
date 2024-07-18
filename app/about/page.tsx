@@ -98,9 +98,9 @@ export default function About() {
               </svg>
             </span>
             <p className="text-center text-[#605B5B] group-hover:text-primaryText">
-              Waypoint was founded by Dealers and Agents, for Dealers and Agents
-              A guide to help you select the right products, structures and
-              services for your customers.
+              Waypoint was founded by Dealers and Agents, for Dealers and
+              Agents. We are a guide to help you select the right products,
+              structures and services for your customers.
             </p>
           </div>
           <div
@@ -212,7 +212,7 @@ export default function About() {
       <section className="bg-primaryBg">
         <div className="flex flex-col lg:flex-row justify-center items-center lg:px-16 px-10 gap-y-5 gap-x-9 my-10">
           <div className="flex flex-col justify-center items-center lg:items-start lg:w-[700px]">
-            <h2 className="font-bold text-4xl mb-4 text-center lg:text-left">
+            <h2 className="font-bold text-4xl mb-4 text-center text-primary lg:text-left">
               <p className="my-1">Waypoint&apos;s Commitment </p>{" "}
               <p>
                 {" "}

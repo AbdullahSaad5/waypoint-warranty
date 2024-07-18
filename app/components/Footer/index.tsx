@@ -107,7 +107,7 @@ export default function Footer() {
           <Divider />
           <div className="flex flex-col lg:flex-row justify-around items-center">
             <span className="text-sm text-center lg:text-lg md:text-base my-2">
-              2024 WAY POINT WARRANTY.com, All rights reserved
+              2024 WAYPOINT WARRANTY.com, All rights reserved
             </span>
             <span className="text-sm text-center lg:text-lg md:text-base my-2">
               Terms & Conditions . Privacy Notice

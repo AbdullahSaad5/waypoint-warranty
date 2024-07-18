@@ -19,7 +19,7 @@ export default function Header() {
               <Image
                 src={Logo}
                 alt="Waypoint Warranty Logo"
-                className="w-[135px]"
+                className="w-[135px] my-2"
               />
             </Link>
           </div>
