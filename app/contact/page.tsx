@@ -1,10 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import ContactBanner from "@/public/contact-banner.png";
 import Image from "next/image";
 import MapImage from "@/public/lancaster-map.png";
+import { sendEmail } from "@/app/utils/email";
+import { toast } from "react-toastify";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    website: "",
+    comments: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
     const value = input.value;
@@ -20,6 +31,48 @@ export default function Contact() {
       .replace(/\D/g, "") // Remove all non-digit characters
       .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3") // Format as (123) 456-7890
       .slice(0, 14); // Limit the length to 14 characters
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await sendEmail({
+        to: "waypointwarranty@gmail.com",
+        from: "waypointwarranty@gmail.com",
+        subject: `New Form Submission`,
+        message: `
+      Name: ${formData.name}
+      Phone Number: +1 ${formData.phoneNumber}
+      Email: ${formData.email}
+      Website: ${formData.website}
+      Comments: ${formData.comments}
+    `,
+      });
+      if (response.message) {
+        toast.success("Response submitted successfully");
+        console.log("Email sent successfully! 2");
+        setFormData({
+          name: "",
+          phoneNumber: "",
+          email: "",
+          website: "",
+          comments: "",
+        });
+      } else {
+        toast.error("Failed to submit response");
+      }
+    } catch (error) {
+      toast.error("Failed to submit response");
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <>
@@ -65,6 +118,7 @@ export default function Contact() {
                 type="text"
                 placeholder="First Name"
                 required
+                onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
@@ -76,6 +130,7 @@ export default function Contact() {
                 type="email"
                 placeholder="Email Address"
                 required
+                onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16  border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
@@ -90,6 +145,7 @@ export default function Contact() {
                 placeholder="(123) 456-7890"
                 pattern="\(\d{3}\) \d{3}-\d{4}"
                 required
+                onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
                 onInput={handleInput}
               />
@@ -102,6 +158,7 @@ export default function Contact() {
                 type="url"
                 placeholder="Your Website"
                 required
+                onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16  border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
@@ -110,6 +167,7 @@ export default function Contact() {
               <textarea
                 placeholder="Your Comment"
                 rows={6}
+                onChange={() => handleInputChange}
                 className="rounded-xl w-full p-4 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
@@ -210,11 +268,11 @@ export default function Contact() {
       </section>
       <section className="bg-primaryBg ">
         <div className="flex justify-center items-center my-10 mx-10">
-          <div className="h-[40vw] w-[80vw] lg:h-[80vh] border border-gray-500">
+          <div className="h-[40vw] lg:h-[80vh] border border-gray-500">
             <Image
               src={MapImage}
               alt="Lancaster Map"
-              className="h-[40vw] lg:h-[80vh] object-cover"
+              className="h-[40vw] lg:h-[80vh] object-fit"
             />
           </div>
         </div>

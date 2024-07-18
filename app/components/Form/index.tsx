@@ -262,7 +262,6 @@ export default function Form() {
             Zip Code<span className="text-red-600"> *</span>
           </label>
           <input
-            type="number"
             name="zipCode"
             placeholder="Zip Code"
             min={0}

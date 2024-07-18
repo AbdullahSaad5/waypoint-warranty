@@ -167,7 +167,7 @@ export default function Dealer() {
           alt="Dealer Banner"
           className="absolute left-0 top-0 z-[2] h-full w-full object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-[2] opacity-65"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-[2] opacity-95"></div>
         <div className="container z-[3] flex h-full items-center text-center lg:text-left flex-col lg:items-start text-primaryText px-4 pt-11 font-[Inter] lg:pl-10">
           <h1 className="lg:text-4xl text-3xl font-semibold">
             Become a Waypoint Dealer
