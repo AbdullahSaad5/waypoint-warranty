@@ -145,7 +145,7 @@ export default function Contact() {
                 placeholder="Email Address"
                 required
                 value={formData.email}
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
                 onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16  border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
