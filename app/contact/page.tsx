@@ -74,13 +74,13 @@ export default function Contact() {
       //   });
       //   if (response.message) {
       toast.success("Response submitted successfully");
-      setFormData({
-        name: "",
-        phoneNumber: "",
-        email: "",
-        website: "",
-        comments: "",
-      });
+      // setFormData({
+      //   name: "",
+      //   phoneNumber: "",
+      //   email: "",
+      //   website: "",
+      //   comments: "",
+      // });
       // } else {
       //   toast.error("Failed to submit response");
       // }
@@ -182,16 +182,18 @@ export default function Contact() {
               </label>
               <input
                 type="url"
+                id="website"
                 placeholder="Your Website"
                 name="website"
-                pattern="https?://.+"
-                title="Include http://"
+                pattern="^(https?:\/\/|www\.)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$"
+                title="Please enter a valid URL that starts with http://, https://, or www. and includes a domain name."
                 required
                 value={formData.website}
                 onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
+
             <div className="col-span-2">
               <label className="font-semibold ml-3">Your Comment</label>
               <textarea
