@@ -16,6 +16,20 @@ export default function Contact() {
     comments: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+
+    if (name === "name") {
+      if (!/^[a-zA-Z\s]*$/.test(value)) {
+        return; // Do not update state if city contains non-alphabetic characters
+      }
+    }
+
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
     const value = input.value;
@@ -31,11 +45,6 @@ export default function Contact() {
       .replace(/\D/g, "") // Remove all non-digit characters
       .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3") // Format as (123) 456-7890
       .slice(0, 14); // Limit the length to 14 characters
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
@@ -57,7 +66,6 @@ export default function Contact() {
       });
       if (response.message) {
         toast.success("Response submitted successfully");
-        console.log("Email sent successfully! 2");
         setFormData({
           name: "",
           phoneNumber: "",
@@ -108,16 +116,21 @@ export default function Contact() {
         </h4>
       </section>
       <section>
-        <form className="lg:px-[120px] md:px-[60px] px-[30px]">
+        <form
+          className="lg:px-[120px] md:px-[60px] px-[30px]"
+          onSubmit={handleSubmit}
+        >
           <div className="grid grid-cols-2 col-span-1 lg:gap-x-9 lg:gap-y-5 gap-4">
             <div className="col-span-2 lg:col-span-1 md:col-span-1">
               <label className="font-semibold ml-3">
-                First Name<span className="text-red-600"> *</span>
+                Name<span className="text-red-600"> *</span>
               </label>
               <input
                 type="text"
-                placeholder="First Name"
+                name="name"
+                placeholder="Name"
                 required
+                value={formData.name}
                 onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
@@ -128,8 +141,11 @@ export default function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
                 required
+                value={formData.email}
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}"
                 onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16  border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
@@ -139,15 +155,15 @@ export default function Contact() {
                 Phone Number<span className="text-red-600"> *</span>
               </label>
               <input
-                type="tel"
                 id="phone"
-                name="phone"
+                name="phoneNumber" // Ensure the name matches the formData key
                 placeholder="(123) 456-7890"
                 pattern="\(\d{3}\) \d{3}-\d{4}"
                 required
+                value={formData.phoneNumber}
                 onChange={handleInputChange}
+                onInput={handleInput} // Use onInput to format the phone number
                 className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
-                onInput={handleInput}
               />
             </div>
             <div className="col-span-2 lg:col-span-1 md:col-span-1">
@@ -157,7 +173,10 @@ export default function Contact() {
               <input
                 type="url"
                 placeholder="Your Website"
+                name="website"
+                pattern="(https?://|www\.)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                 required
+                value={formData.website}
                 onChange={handleInputChange}
                 className="rounded-xl w-full p-3 pr-16  border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
@@ -166,8 +185,10 @@ export default function Contact() {
               <label className="font-semibold ml-3">Your Comment</label>
               <textarea
                 placeholder="Your Comment"
+                value={formData.comments}
                 rows={6}
-                onChange={() => handleInputChange}
+                onChange={handleInputChange} // Pass the handler correctly
+                name="comments" // Ensure the name matches the formData key
                 className="rounded-xl w-full p-4 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
@@ -175,9 +196,15 @@ export default function Contact() {
           <div className="flex justify-center items-center my-5">
             <button
               type="submit"
-              className="bg-primary text-primaryText py-3 px-3 rounded-md hover:bg-[#0D5F37]"
+              className={`bg-primary text-primaryText py-3 px-3 rounded-md hover:bg-[#0D5F37]
+                ${isLoading ? "opacity-50 cursor-not-allowed" : ""} `}
+              disabled={isLoading}
             >
-              Send Message
+              {isLoading ? (
+                <span className="loading loading-spinner loading-sm"></span>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </div>
         </form>

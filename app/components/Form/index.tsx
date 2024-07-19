@@ -36,6 +36,24 @@ export default function Form() {
       }
     }
 
+    if (name === "firstName") {
+      if (!/^[a-zA-Z\s]*$/.test(value)) {
+        return; // Do not update state if city contains non-alphabetic characters
+      }
+    }
+
+    if (name === "lastName") {
+      if (!/^[a-zA-Z\s]*$/.test(value)) {
+        return; // Do not update state if city contains non-alphabetic characters
+      }
+    }
+
+    if (name === "state") {
+      if (!/^[a-zA-Z\s]*$/.test(value)) {
+        return; // Do not update state if city contains non-alphabetic characters
+      }
+    }
+
     setFormData({ ...formData, [name]: value });
   };
 
@@ -82,7 +100,6 @@ export default function Form() {
       });
       if (response.message) {
         toast.success("Response submitted successfully");
-        console.log("Email sent successfully! 2");
         setFormData({
           firstName: "",
           lastName: "",
@@ -166,11 +183,14 @@ export default function Form() {
             name="email"
             placeholder="Email"
             required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}"
+            title="Please enter a valid email address"
             value={formData.email}
             onChange={handleInputChange}
             className="rounded-xl w-full p-4 lg:pr-16 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
           />
         </div>
+
         <div className="col-span-2 lg:col-span-1 md:col-span-1">
           <label className="font-semibold ml-3">
             Business Number<span className="text-red-600"> *</span>
@@ -264,13 +284,15 @@ export default function Form() {
           <input
             name="zipCode"
             placeholder="Zip Code"
-            min={0}
             required
+            pattern="\d{5}"
+            title="Please enter a 5-digit zip code"
             value={formData.zipCode}
             onChange={handleInputChange}
             className="rounded-xl w-full p-4 py-2 lg:py-3 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
           />
         </div>
+
         <div className="col-span-2">
           <label className="font-semibold ml-3">Additional Notes</label>
           <input
