@@ -6,6 +6,14 @@ import Image from "next/image";
 import MapImage from "@/public/lancaster-map.png";
 import { sendEmail } from "@/app/utils/email";
 import { toast } from "react-toastify";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+  preload: true,
+});
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -52,30 +60,30 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      const response = await sendEmail({
-        to: "waypointwarranty@gmail.com",
-        from: "waypointwarranty@gmail.com",
-        subject: `New Form Submission`,
-        message: `
-      Name: ${formData.name}
-      Phone Number: +1 ${formData.phoneNumber}
-      Email: ${formData.email}
-      Website: ${formData.website}
-      Comments: ${formData.comments}
-    `,
+      //   const response = await sendEmail({
+      //     to: "waypointwarranty@gmail.com",
+      //     from: "waypointwarranty@gmail.com",
+      //     subject: `New Form Submission`,
+      //     message: `
+      //   Name: ${formData.name}
+      //   Phone Number: +1 ${formData.phoneNumber}
+      //   Email: ${formData.email}
+      //   Website: ${formData.website}
+      //   Comments: ${formData.comments}
+      // `,
+      //   });
+      //   if (response.message) {
+      toast.success("Response submitted successfully");
+      setFormData({
+        name: "",
+        phoneNumber: "",
+        email: "",
+        website: "",
+        comments: "",
       });
-      if (response.message) {
-        toast.success("Response submitted successfully");
-        setFormData({
-          name: "",
-          phoneNumber: "",
-          email: "",
-          website: "",
-          comments: "",
-        });
-      } else {
-        toast.error("Failed to submit response");
-      }
+      // } else {
+      //   toast.error("Failed to submit response");
+      // }
     } catch (error) {
       toast.error("Failed to submit response");
     } finally {
@@ -100,7 +108,9 @@ export default function Contact() {
       </main>
       <section className="bg-primaryBg p-1">
         <h4 className="flex flex-col justify-center items-center my-6 ">
-          <p className="text-primary lg:text-2xl md:text-2xl text-xl font-bold font-[Inter]">
+          <p
+            className={`text-primary lg:text-2xl md:text-2xl text-xl font-bold ${inter.className}`}
+          >
             GET IN TOUCH
           </p>
           <p className="text-secondaryText lg:text-4xl md:text-3xl text-2xl py-2">
@@ -174,11 +184,12 @@ export default function Contact() {
                 type="url"
                 placeholder="Your Website"
                 name="website"
-                pattern="(https?://|www\.)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                pattern="https?://.+"
+                title="Include http://"
                 required
                 value={formData.website}
                 onChange={handleInputChange}
-                className="rounded-xl w-full p-3 pr-16  border border-gray-400 mt-2 focus:border-primary focus:outline-none"
+                className="rounded-xl w-full p-3 pr-16 border border-gray-400 mt-2 focus:border-primary focus:outline-none"
               />
             </div>
             <div className="col-span-2">
@@ -227,7 +238,9 @@ export default function Contact() {
               </svg>
             </div>
             <div className="flex flex-col justify-center items-start">
-              <p className="lg:text-xl text-secondaryText font-semibold font-[Inter]">
+              <p
+                className={`lg:text-xl text-secondaryText font-semibold ${inter.className}`}
+              >
                 Office Address
               </p>
               <p className="lg:text-lg">
@@ -263,7 +276,9 @@ export default function Contact() {
               </svg>
             </div>
             <div className="flex flex-col justify-center items-start">
-              <p className="lg:text-2xl text-secondaryText font-semibold font-[Inter]">
+              <p
+                className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}
+              >
                 Phone Number
               </p>
               <p className="lg:text-lg">(408) 389-5470</p>
@@ -283,7 +298,9 @@ export default function Contact() {
                   fill="#128949"
                 />
               </svg>
-              <p className="lg:text-2xl text-secondaryText font-semibold font-[Inter]">
+              <p
+                className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}
+              >
                 Mail Address
               </p>
             </div>

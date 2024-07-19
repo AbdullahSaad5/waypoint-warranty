@@ -5,6 +5,14 @@ import Image, { StaticImageData } from "next/image";
 import ProductCard from "@/app/components/ProductCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+  preload: true,
+});
 
 // Define the structure of a Product
 type Products = {
@@ -72,14 +80,19 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-blue lg:text-2xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6">
+            <h4
+              className={`font-bold text-blue lg:text-2xl md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 ${inter.className}`}
+            >
               Coverage Highlights
             </h4>
             <div className="m-4 px-2 min-w-[350px] sm:w-[300px]">
               <ul className="custom-list">
                 {product.coverageHighlights?.map(
                   (highlight: string, index: number) => (
-                    <li key={index} className="text-sm font-[Inter] my-2">
+                    <li
+                      key={index}
+                      className={`text-sm my-2 ${inter.className}`}
+                    >
                       {highlight}
                     </li>
                   )
@@ -88,14 +101,19 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </div>
           </div>
           <div>
-            <h4 className="font-bold lg:text-4xl font-[Inter] md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 text-blue">
+            <h4
+              className={`font-bold text-blue lg:text-2xl md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 ${inter.className}`}
+            >
               Eligibility
             </h4>
             <div className="lg:m-4 px-2 min-w-[350px] sm:w-[300px] mx-4">
               <ul className="custom-list">
                 {product.eligibility?.map(
                   (highlight: string, index: number) => (
-                    <li key={index} className="text-sm font-[Inter] my-3">
+                    <li
+                      key={index}
+                      className={`text-sm my-3 ${inter.className}`}
+                    >
                       {highlight}
                     </li>
                   )

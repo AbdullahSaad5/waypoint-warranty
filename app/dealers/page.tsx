@@ -8,6 +8,14 @@ import Image from "next/image";
 import Card from "../components/Card";
 import Form from "../components/Form";
 import { useRouter } from "next/navigation";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+  preload: true,
+});
 
 export default function Dealer() {
   const router = useRouter();
@@ -168,7 +176,9 @@ export default function Dealer() {
           className="absolute left-0 top-0 z-[2] h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-[2] opacity-95"></div>
-        <div className="container z-[3] flex h-full items-center text-center lg:text-left flex-col lg:items-start text-primaryText px-4 pt-11 font-[Inter] lg:pl-10">
+        <div
+          className={`container z-[3] flex h-full items-center text-center lg:text-left flex-col lg:items-start text-primaryText px-4 pt-11 lg:pl-10 ${inter.className}`}
+        >
           <h1 className="lg:text-4xl text-3xl font-semibold">
             Become a Waypoint Dealer
           </h1>

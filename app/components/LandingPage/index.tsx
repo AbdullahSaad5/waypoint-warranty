@@ -10,6 +10,14 @@ import CardImage1 from "@/public/card-image-1.png";
 import CardImage2 from "@/public/card-image-2.png";
 import CardImage3 from "@/public/card-image-3.png";
 import { useRouter } from "next/navigation";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+  preload: true,
+});
 
 export default function LandingPage() {
   const router = useRouter();
@@ -35,7 +43,9 @@ export default function LandingPage() {
             ever-evolving full suite of products and services to meet
             today&apos;s consumer demands.
           </h1>
-          <p className="text-primaryText lg:mt-8 mt-5 font-thin 2xl:text-2xl xl:text-xl lg:text-xl md:text-lg sm:text-base font-[Inter] lg:text-left text-center">
+          <p
+            className={`text-primaryText lg:mt-8 mt-5 font-thin 2xl:text-2xl xl:text-xl lg:text-xl md:text-lg sm:text-base lg:text-left text-center ${inter.className}`}
+          >
             Waypoint offers true partnership and transparency on every step of
             your journey.{" "}
           </p>
