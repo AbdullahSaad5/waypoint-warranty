@@ -48,7 +48,7 @@
     }
   }
 
-  @media screen and (min-width: 499px) {
+  @media screen and (max-width: 450px) {
     .custom-circle-list li {
       margin-left: 0 !important;
     }
