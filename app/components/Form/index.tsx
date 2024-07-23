@@ -80,7 +80,7 @@ export default function Form() {
 
     try {
       const response = await sendEmail({
-        to: "waypointwarranty@gmail.com",
+        to: "info@waypointwarrantysolutions.com",
         from: "waypointwarranty@gmail.com",
         subject: `New Form Submission`,
         message: `
