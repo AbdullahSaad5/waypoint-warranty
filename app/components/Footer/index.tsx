@@ -24,6 +24,7 @@ export default function Footer() {
     icon: ReactElement;
     name: string;
     location?: string;
+    href: string;
   };
 
   const addresses: Addressprops[] = [
@@ -31,14 +32,17 @@ export default function Footer() {
       icon: <MapPin />,
       name: "2173 Embassy Drive",
       location: "Lancaster, PA 17603",
+      href: "https://maps.app.goo.gl/8aLcrz5Aot6NKbXe7",
     },
     {
       icon: <Phone />,
       name: "+1 (408) 389-5470",
+      href: "tel:+14083895470",
     },
     {
       icon: <Mail />,
       name: "info@waypointwarrantysolutions.com",
+      href: "mailto:info@waypointwarrantysolutions.com",
     },
   ];
 
@@ -126,7 +130,7 @@ export default function Footer() {
                 <span className="font-bold">Contact Us</span>
                 <div className="flex flex-col space-y-2 mt-2 gap-4">
                   {addresses.map((address: Addressprops, index: number) => (
-                    <div className="flex flex-row" key={index}>
+                    <a className="flex flex-row" key={index} href={address.href} target="_blank" rel="noreferrer">
                       <div className="flex justify-center items-center mr-4">
                         <div>{address.icon}</div>
                       </div>
@@ -134,7 +138,7 @@ export default function Footer() {
                         <span>{address.name}</span>
                         <span>{address.location}</span>
                       </div>
-                    </div>
+                    </a>
                   ))}
                 </div>
               </div>
