@@ -32,11 +32,10 @@ const productDetails: Products[] = [
   {
     id: 0,
     number: "01",
-    icon: <Image src={Icon1} alt="icon-1" className="w-16" />,
+    icon: <Image src={Icon1} alt="icon-1" className="w-16 object-contain" />,
     title: "Waypoint Vehicle Service Contract",
     pageTitle: "Vehicle Service Contract",
-    description:
-      "For new and pre-owned vehicles, Certified Pre-Owned, and Commercial Usage",
+    description: "For new and pre-owned vehicles, Certified Pre-Owned, and Commercial Usage",
     coverageHighlights: [
       "Lift Kit coverage available",
       "Four levels of coverage: Platinum, Gold Plus, Gold, Powertrain",
@@ -56,13 +55,12 @@ const productDetails: Products[] = [
       "Term limits range from 6/6,000 to 120/125,00",
     ],
     images: [ProductImage1, ProductImage2, ProductImage3],
-    videoLink:
-      "https://www.youtube.com/watch?v=8MygUVxCnH0&pp=ygUUY2FyIGluc3BlY3Rpb24gdmlkZW8%3D",
+    videoLink: "https://www.youtube.com/watch?v=8MygUVxCnH0&pp=ygUUY2FyIGluc3BlY3Rpb24gdmlkZW8%3D",
   },
   {
     id: 1,
     number: "02",
-    icon: <Image src={Icon2} alt="icon-2" className="w-20 h-12" />,
+    icon: <Image src={Icon2} alt="icon-2" className="w-20 h-12 object-contain" />,
     title: "Pre-Owned Vehicle Service Contract",
     pageTitle: "Pre-Owned Vehicle Service Contract",
     description: "For pre-owned vehicles",
@@ -87,7 +85,7 @@ const productDetails: Products[] = [
   {
     id: 2,
     number: "03",
-    icon: <Image src={Icon3} alt="icon-3" className="w-16 h-12" />,
+    icon: <Image src={Icon3} alt="icon-3" className="w-16 h-12 object-contain" />,
     title: "Term Care Vehicle Service Contract",
     pageTitle: "Term Care Vehicle Service Contract",
     description: "Platinum level coverage for the term of the contract",
@@ -105,20 +103,17 @@ const productDetails: Products[] = [
       "Claim Credit Card payments available for out-of-network repair facilities",
       "Insured by Virginia Surety, A- A.M. Best Rated",
     ],
-    eligibility: [
-      "Current plus 1 model year and odometer less than 10,000 miles",
-    ],
+    eligibility: ["Current plus 1 model year and odometer less than 10,000 miles"],
     images: [ProductImage1, ProductImage2, ProductImage3],
     videoLink: "https://www.youtube.com/embed/ghCP-wuB9qI",
   },
   {
     id: 3,
     number: "04",
-    icon: <Image src={Icon4} alt="icon-4" className="w-16" />,
+    icon: <Image src={Icon4} alt="icon-4" className="w-16 object-contain" />,
     title: "Total Tech Vehicle Service Contract",
     pageTitle: "Total Tech Vehicle Service Contract",
-    description:
-      "Only the following parts and/or Systems are covered. Parts and systems not listed are not covered.",
+    description: "Only the following parts and/or Systems are covered. Parts and systems not listed are not covered.",
     coverageHighlights: [
       "Touch/Display Screens",
       "Home Link System",
@@ -140,16 +135,14 @@ const productDetails: Products[] = [
       "Claim Credit Card payments available for out-of-network repair facilities",
       "Insured by Virginia Surety, A- A.M. Best Rated",
     ],
-    eligibility: [
-      "Current plus 5 model years and odometer less than 60,000 miles",
-    ],
+    eligibility: ["Current plus 5 model years and odometer less than 60,000 miles"],
     images: [ProductImage1, ProductImage2, ProductImage3],
     videoLink: "https://www.youtube.com/embed/yRgMmgGLLig",
   },
   {
     id: 4,
     number: "05",
-    icon: <Image src={Icon5} alt="icon-5" className="w-16" />,
+    icon: <Image src={Icon5} alt="icon-5" className="w-16 object-contain" />,
     title: "EV Battery Vehicle Service Contract",
     pageTitle: "EV Battery Vehicle Service Contract",
     description:
@@ -162,16 +155,14 @@ const productDetails: Products[] = [
       "Claim Credit Card payments available for out-of-network repair facilities",
       "Insured by Virginia Surety, A- A.M. Best Rated",
     ],
-    eligibility: [
-      "Current plus 4 model years and odometer less than 100,000 miles",
-    ],
+    eligibility: ["Current plus 4 model years and odometer less than 100,000 miles"],
     images: [ProductImage1, ProductImage2, ProductImage3],
     videoLink: "https://www.youtube.com/embed/mTzI08GE51I",
   },
   {
     id: 5,
     number: "06",
-    icon: <Image src={Icon6} alt="icon-6" className="w-14 h-14 mt-1" />,
+    icon: <Image src={Icon6} alt="icon-6" className="w-14 h-14 mt-1 object-contain" />,
     title: "Lifetime Limited Powertrain Warranty",
     pageTitle: "Limited Powertrain Warranty",
     description: "Lifetime Powertrain Coverage",
@@ -194,7 +185,7 @@ const productDetails: Products[] = [
   {
     id: 6,
     number: "07",
-    icon: <Image src={Icon7} alt="icon-7" className="w-16 h-14" />,
+    icon: <Image src={Icon7} alt="icon-7" className="w-16 h-14 object-contain" />,
     title: "Certified Pre-Owned Powertrain Warranty",
     pageTitle: "Pre-Owned Powertrain Warranty",
     description: "EMatches or exceeds OEM Warranty Coverage",
@@ -213,7 +204,7 @@ const productDetails: Products[] = [
   {
     id: 7,
     number: "08",
-    icon: <Image src={Icon8} alt="icon-8" className="w-16 h-14" />,
+    icon: <Image src={Icon8} alt="icon-8" className="w-16 h-14 object-contain" />,
     title: "Used Vehicle Limited Warranty",
     pageTitle: "Vehicle Limited Warranty",
     description: "Variety of options available:",
@@ -246,7 +237,7 @@ const productDetails: Products[] = [
   {
     id: 8,
     number: "09",
-    icon: <Image src={Icon9} alt="icon-9" className="w-16 h-14" />,
+    icon: <Image src={Icon9} alt="icon-9" className="w-16 h-14 object-contain" />,
     title: "GAP",
     pageTitle: "GAP",
     description: "Up to 96 Month Term",
@@ -265,7 +256,7 @@ const productDetails: Products[] = [
   {
     id: 9,
     number: "10",
-    icon: <Image src={Icon10} alt="icon-10" className="w-16 h-14" />,
+    icon: <Image src={Icon10} alt="icon-10" className="w-16 h-14 object-contain" />,
     title: "Pre-Paid Maintenance",
     pageTitle: "Pre-Paid Maintenance",
     description: "Fully Customizable Program",
@@ -288,7 +279,7 @@ const productDetails: Products[] = [
   {
     id: 10,
     number: "11",
-    icon: <Image src={Icon11} alt="icon-11" className="w-16 h-14" />,
+    icon: <Image src={Icon11} alt="icon-11" className="w-16 h-14 object-contain" />,
     title: "Tire and Road Hazard",
     pageTitle: "Tire and Road Hazard",
     coverageHighlights: [
@@ -314,7 +305,7 @@ const productDetails: Products[] = [
   {
     id: 11,
     number: "12",
-    icon: <Image src={Icon12} alt="icon-12" className="w-16 h-14" />,
+    icon: <Image src={Icon12} alt="icon-12" className="w-16 h-14 object-contain" />,
     title: "Theft and Ancillary Products",
     pageTitle: "Theft and Ancillary Products",
     coverageHighlights: [
