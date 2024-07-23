@@ -31,7 +31,7 @@ export default function Footer() {
     },
     {
       icon: <Phone />,
-      name: "+1 (408) 389-5470",
+      name: "+1 (717) 431-3113",
       href: "tel:+14083895470",
     },
     {

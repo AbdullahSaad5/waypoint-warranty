@@ -238,8 +238,8 @@ export default function Contact() {
             </div>
             <div className="flex flex-col justify-center items-start">
               <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Phone Number</p>
-              <a href="tel:+1 (408) 389-5470" className="lg:text-lg">
-                +1 (408) 389-5470
+              <a href="tel:+1 (717) 431-3113" className="lg:text-lg">
+                +1 (717) 431-3113
               </a>
             </div>
           </div>
