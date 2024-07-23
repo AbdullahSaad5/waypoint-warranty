@@ -58,6 +58,10 @@ export default function Footer() {
       setEmail("");
       setLoading(false);
     }, 2000);
+
+    setTimeout(() => {
+      setError("");
+    }, 10000);
   };
 
   return (
