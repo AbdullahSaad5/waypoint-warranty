@@ -272,7 +272,7 @@ const productDetails: Products[] = [
       "Administered fully online",
       "Unused services refunded to Dealer",
     ],
-    eligibility: ["None"],
+    eligibility: [],
     images: [ProductImage1, ProductImage2, ProductImage3],
     videoLink: "https://www.youtube.com/embed/ymk-eWhV-cs",
   },

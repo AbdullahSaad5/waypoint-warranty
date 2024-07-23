@@ -90,22 +90,24 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
               </ul>
             </div>
           </div>
-          <div>
-            <h4
-              className={`font-bold text-blue lg:text-2xl md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 ${inter.className}`}
-            >
-              Eligibility
-            </h4>
-            <div className="lg:m-4 px-2 min-w-[350px] sm:w-[300px] mx-4">
-              <ul className="custom-list">
-                {product.eligibility?.map((highlight: string, index: number) => (
-                  <li key={index} className={`text-sm my-3 ${inter.className}`}>
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
+          {product.eligibility?.length ? (
+            <div>
+              <h4
+                className={`font-bold text-blue lg:text-2xl md:text-xl xl:text-2xl 2xl:text-2xl text-lg ml-6 ${inter.className}`}
+              >
+                Eligibility
+              </h4>
+              <div className="lg:m-4 px-2 min-w-[350px] sm:w-[300px] mx-4">
+                <ul className="custom-list">
+                  {product.eligibility?.map((highlight: string, index: number) => (
+                    <li key={index} className={`text-sm my-3 ${inter.className}`}>
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          ) : null}
         </div>
         <div className="flex lg:justify-start lg:items-end justify-center items-center flex-col gap-y-8 my-5">
           <div className="">
