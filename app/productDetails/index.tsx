@@ -46,7 +46,7 @@ const productDetails: Products[] = [
       "Emergency Travel Expense Reimbursement up to $375",
       "Covers seals & gaskets on all levels of coverage",
       "Credit Card payments available for out-of-network dealers",
-      "Insured by Virginia Surety, A-vA.M. Best Rated",
+      "Insured by Virginia Surety, A-A.M. Best Rated",
     ],
     eligibility: [
       "Available on new and used vehicles",
