@@ -6,19 +6,14 @@ import links from "@/app/links";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { ReactElement, useState } from "react";
 import { toast } from "react-toastify";
+import productDetails from "@/app/productDetails";
+import { createSlug } from "@/app/utils/createSlug";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const products: string[] = [
-    "GAP",
-    "Tire and Road Hazard",
-    "Theft and Ancillary Products",
-    "Pre-Paid Maintenance",
-    "Pre-Owned Vehicle Service Contract",
-    "EV Battery Vehicle Service Contract",
-  ];
+  const products: string[] = productDetails.map((product) => product.title);
 
   type Addressprops = {
     icon: ReactElement;
@@ -103,7 +98,7 @@ export default function Footer() {
           </div>
           <Divider />
           <div className="grid grid-cols-3 gap-4">
-            <div className="ml-4 md:col-span-1 col-span-3 flex justify-center items-center text-center lg:text-left md:text-left lg:col-span-1">
+            <div className="ml-4 md:col-span-1 col-span-3 flex justify-center text-center lg:text-left md:text-left lg:col-span-1">
               <div>
                 <span className="font-bold">Company</span>
                 <div className="flex flex-col space-y-2 mt-2">
@@ -115,17 +110,25 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-1 flex justify-center items-center text-center lg:text-left md:text-left col-span-3 lg:col-span-1">
+            <div className="md:col-span-1 flex justify-center text-center lg:text-left md:text-left col-span-3 lg:col-span-1">
               <div>
                 <span className="font-bold">Products</span>
                 <div className="flex flex-col space-y-2 mt-2">
-                  {products.map((product) => (
-                    <span key={product}>{product}</span>
-                  ))}
+                  {products
+                    .slice(0, 5)
+                    .concat("All Products")
+                    .map((product) => (
+                      <Link
+                        href={product === "All Products" ? `/products` : `/products/${createSlug(product)}`}
+                        key={product}
+                      >
+                        <span>{product}</span>
+                      </Link>
+                    ))}
                 </div>
               </div>
             </div>
-            <div className="md:col-span-1 flex justify-center items-center text-center lg:text-left md:text-left col-span-3 lg:col-span-1">
+            <div className="md:col-span-1 flex justify-center text-center lg:text-left md:text-left col-span-3 lg:col-span-1">
               <div>
                 <span className="font-bold">Contact Us</span>
                 <div className="flex flex-col space-y-2 mt-2 gap-4 items-center md:items-start">
