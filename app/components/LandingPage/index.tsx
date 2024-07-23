@@ -53,7 +53,7 @@ export default function LandingPage() {
         </div>
       </main>
       <section className="m-8">
-        <div className="min-h-screen flex lg:flex-row flex-col mx-3 lg:mx-5 gap-y-9 items-center justify-center py-12 px-4 sm:px-6 lg:gap-x-9 lg:px-8">
+        <div className="flex lg:flex-row flex-col mx-3 lg:mx-5 gap-y-9 items-center justify-center py-12 px-4 sm:px-6 lg:gap-x-9 lg:px-8">
           <Card
             image={CardImage1}
             title="Dealers"
