@@ -4,8 +4,9 @@ import productDetails from "@/app/productDetails";
 import Image, { StaticImageData } from "next/image";
 import ProductCard from "@/app/components/ProductCard";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { Inter } from "next/font/google";
+import { createSlug } from "@/app/utils/createSlug";
 
 const inter = Inter({
   weight: ["400"],
@@ -30,15 +31,15 @@ type Products = {
 
 const SpecificProduct = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
-  const index: number = parseInt(params.id);
-  const product = productDetails[index] as Products;
+  const slug: string = params.id;
+  const product = productDetails.find((product) => createSlug(product.title) === slug) as Products | undefined;
   const pageTitle = product?.pageTitle;
   const words = pageTitle?.split(" ") || [];
   const [relatedProducts, setRelatedProducts] = useState<Products[]>([]);
 
   useEffect(() => {
     // Filter out the current product
-    const filteredProducts = productDetails.filter((_, i) => i !== index);
+    const filteredProducts = productDetails.filter((product) => product.title !== pageTitle);
 
     // Shuffle the filtered products
     const shuffledProducts = filteredProducts.sort(() => 0.5 - Math.random());
@@ -47,7 +48,11 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
     const selectedProducts = shuffledProducts.slice(0, 3);
 
     setRelatedProducts(selectedProducts);
-  }, [index]);
+  }, [pageTitle]);
+
+  if (!product) {
+    return notFound();
+  }
 
   return (
     <>
@@ -57,17 +62,9 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             <div className="font-bold lg:text-left text-center text-primary">
               {words?.length > 2 ? (
                 <>
-                  <p className="text-3xl md:text-4xl lg:text-5xl">
-                    {words?.slice(0, 2).join(" ")}
-                  </p>{" "}
-                  <span className="text-2xl md:text-3xl lg:text-4xl">
-                    {words[2]}
-                  </span>{" "}
-                  {words.length > 3 && (
-                    <p className="text-2xl md:text-3xl lg:text-4xl ">
-                      {words?.slice(3).join(" ")}
-                    </p>
-                  )}
+                  <p className="text-3xl md:text-4xl lg:text-5xl">{words?.slice(0, 2).join(" ")}</p>{" "}
+                  <span className="text-2xl md:text-3xl lg:text-4xl">{words[2]}</span>{" "}
+                  {words.length > 3 && <p className="text-2xl md:text-3xl lg:text-4xl ">{words?.slice(3).join(" ")}</p>}
                 </>
               ) : (
                 pageTitle
@@ -75,9 +72,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </div>
           </h1>
           <div className="m-4 px-2 min-w-[350px]">
-            <p className="text-[#525151] text-sm lg:text-left text-center">
-              {product.description}
-            </p>
+            <p className="text-[#525151] text-sm lg:text-left text-center">{product.description}</p>
           </div>
           <div>
             <h4
@@ -87,16 +82,11 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </h4>
             <div className="m-4 px-2 min-w-[350px] sm:w-[300px]">
               <ul className="custom-list">
-                {product.coverageHighlights?.map(
-                  (highlight: string, index: number) => (
-                    <li
-                      key={index}
-                      className={`text-sm my-2 ${inter.className}`}
-                    >
-                      {highlight}
-                    </li>
-                  )
-                )}
+                {product.coverageHighlights?.map((highlight: string, index: number) => (
+                  <li key={index} className={`text-sm my-2 ${inter.className}`}>
+                    {highlight}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -108,16 +98,11 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             </h4>
             <div className="lg:m-4 px-2 min-w-[350px] sm:w-[300px] mx-4">
               <ul className="custom-list">
-                {product.eligibility?.map(
-                  (highlight: string, index: number) => (
-                    <li
-                      key={index}
-                      className={`text-sm my-3 ${inter.className}`}
-                    >
-                      {highlight}
-                    </li>
-                  )
-                )}
+                {product.eligibility?.map((highlight: string, index: number) => (
+                  <li key={index} className={`text-sm my-3 ${inter.className}`}>
+                    {highlight}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -179,7 +164,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
               number={relatedProduct.number}
               icon={relatedProduct.icon}
               title={relatedProduct.title}
-              onClick={() => router.push(`/products/${relatedProduct.id}`)}
+              onClick={() => router.push(`/products/${createSlug(relatedProduct.title)}`)}
             />
           ))}
         </div>

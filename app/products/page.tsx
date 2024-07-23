@@ -6,6 +6,7 @@ import Image from "next/image";
 import productDetails from "../productDetails";
 import ProductCard from "../components/ProductCard";
 import { useRouter } from "next/navigation";
+import { createSlug } from "../utils/createSlug";
 
 export default function Products() {
   const router = useRouter();
@@ -107,18 +108,13 @@ export default function Products() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-[2] opacity-35"></div>
         <div className="container z-[3] flex h-full items-center text-center justify-center flex-col text-primaryText px-4">
-          <h1 className="md:text-5xl text-4xl lg:text-7xl font-semibold">
-            Products
-          </h1>
+          <h1 className="md:text-5xl text-4xl lg:text-7xl font-semibold">Products</h1>
         </div>
         <span className="font-semibold absolute z-[3] text-xl text-primaryText lg:left-0 xl:left-0 xl:ml-8 2xl:left-0 2xl:ml-8 lg:ml-8 bottom-5">
           Home {">"} Products
         </span>
       </section>
-      <section
-        id="products"
-        className="bg-secondaryBg flex justify-center items-center py-5 px-10"
-      >
+      <section id="products" className="bg-secondaryBg flex justify-center items-center py-5 px-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 md:col-span-1 md:gap-x-16 lg:gap-x-10 lg:gap-y-10 md:gap-y-6 gap-y-5 lg:col-span-1 my-12">
           {productDetails.map((product, index: number) => (
             <ProductCard
@@ -126,7 +122,7 @@ export default function Products() {
               number={product.number}
               icon={product.icon}
               title={product.title}
-              onClick={() => router.push(`/products/${index}`)}
+              onClick={() => router.push(`/products/${createSlug(product.title)}`)}
             />
           ))}
         </div>
