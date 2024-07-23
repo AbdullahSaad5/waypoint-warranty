@@ -205,9 +205,9 @@ export default function Contact() {
         </form>
       </section>
       <section className="bg-primaryBg lg:px-[100px] md:px-[60px] px-[30px]">
-        <div className="flex lg:flex-row justify-center flex-col items-center lg:justify-around box-content my-10 mx-6 gap-x-3 gap-y-5">
-          <div className="lg:w-80 lg:h-[180px] w-72 h-[150px] border border-gray-300 flex flex-row justify-between items-center">
-            <div className="mx-5">
+        <div className="flex lg:flex-row justify-center flex-col items-center  box-content my-10 mx-6 gap-x-3 gap-y-5">
+          <div className="w-full lg:h-[180px] h-[150px] border border-gray-300 flex flex-row  justify-center items-center gap-4">
+            <div>
               <svg width="75" height="60" viewBox="0 0 84 71" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M41.561 4.4375C33.9856 4.44513 26.7231 7.01895 21.3666 11.5944C16.01 16.1698 12.9967 22.3732 12.9878 28.8438C12.9808 34.1312 15.0028 39.275 18.744 43.4875C18.744 43.4875 19.5233 44.3639 19.6506 44.4904L41.561 66.5625L63.4818 44.4793C63.5961 44.3617 64.378 43.4875 64.378 43.4875L64.3806 43.4808C68.1193 39.2699 70.1402 34.1287 70.1342 28.8438C70.1252 22.3732 67.112 16.1698 61.7554 11.5944C56.3988 7.01895 49.1363 4.44513 41.561 4.4375ZM41.561 37.7188C39.506 37.7188 37.4971 37.1982 35.7885 36.223C34.0798 35.2478 32.7481 33.8618 31.9616 32.2401C31.1752 30.6184 30.9695 28.8339 31.3704 27.1123C31.7713 25.3907 32.7609 23.8094 34.214 22.5682C35.6671 21.327 37.5184 20.4817 39.5339 20.1393C41.5495 19.7968 43.6386 19.9726 45.5372 20.6443C47.4357 21.316 49.0585 22.4536 50.2001 23.9131C51.3418 25.3726 51.9512 27.0884 51.9512 28.8438C51.9478 31.1966 50.852 33.4523 48.9042 35.1161C46.9564 36.7798 44.3156 37.7158 41.561 37.7188Z"
@@ -216,12 +216,12 @@ export default function Contact() {
               </svg>
             </div>
             <div className="flex flex-col justify-center items-start">
-              <p className={`lg:text-xl text-secondaryText font-semibold ${inter.className}`}>Office Address</p>
+              <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Office Address</p>
               <p className="lg:text-lg">2173 Embassy Drive Lancaster, PA 17603</p>
             </div>
           </div>
-          <div className="lg:w-80 lg:h-[180px] w-72 h-[150px] border border-gray-300 flex flex-row justify-center items-center">
-            <div className="mr-6">
+          <div className="w-full lg:h-[180px]  h-[150px] border border-gray-300 flex flex-row justify-center items-center  gap-4">
+            <div>
               <svg width="75" height="60" viewBox="0 0 84 71" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_272_2239)">
                   <path
@@ -237,24 +237,24 @@ export default function Contact() {
               </svg>
             </div>
             <div className="flex flex-col justify-center items-start">
-              <p className="lg:text-2xl text-secondaryText font-semibold font-[Inter]">Phone Number</p>
-              <a href="tel:(408) 389-5470" className="lg:text-lg">
-                (408) 389-5470
+              <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Phone Number</p>
+              <a href="tel:+1 (408) 389-5470" className="lg:text-lg">
+                +1 (408) 389-5470
               </a>
             </div>
           </div>
-          <div className="lg:w-80 lg:h-[180px] w-72 h-[150px] border border-gray-300 flex justify-center flex-col items-center">
-            <div className="flex flex-row justify-between">
+          <div className="w-full lg:h-[180px]  h-[150px] border border-gray-300 flex flex-row justify-center items-center  gap-4">
+            <div>
               <svg width="lg:65" height="60" viewBox="0 0 75 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12.5 62.5C10.7812 62.5 9.31042 61.8885 8.0875 60.6656C6.86458 59.4427 6.25208 57.9708 6.25 56.25V18.75C6.25 17.0312 6.8625 15.5604 8.0875 14.3375C9.3125 13.1146 10.7833 12.5021 12.5 12.5H62.5C64.2188 12.5 65.6906 13.1125 66.9156 14.3375C68.1406 15.5625 68.7521 17.0333 68.75 18.75V56.25C68.75 57.9687 68.1385 59.4406 66.9156 60.6656C65.6927 61.8906 64.2208 62.5021 62.5 62.5H12.5ZM37.5 40.625L62.5 25V18.75L37.5 34.375L12.5 18.75V25L37.5 40.625Z"
                   fill="#128949"
                 />
               </svg>
-              <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Mail Address</p>
             </div>
-            <div className="lg:text-md text-sm md:text-md ">
-              <a href="mailto:info@waypointwarrantysolutions.com" target="_blank">
+            <div className="flex flex-col justify-center items-start">
+              <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Mail Address</p>
+              <a href="mailto:info@waypointwarrantysolutions.com" target="_blank" className="break-all">
                 info@waypointwarrantysolutions.com
               </a>
             </div>
@@ -264,14 +264,14 @@ export default function Contact() {
       <section className="bg-primaryBg ">
         <div className="flex justify-center items-center my-10 mx-10">
           <div className="h-[40vw] w-[80vw] lg:h-[80vh] border border-gray-500/25 relative">
-            <Image
-              src={MapImage}
-              alt="Lancaster Map"
-              className="h-[40vw] lg:h-[80vh] object-cover w-full"
-              fill
-              quality={100}
-              fetchPriority="high"
-            />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.361191077947!2d-76.3612515!3d40.04503979999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c62420e6aad537%3A0xfc77ba3d0f194859!2s2173%20Embassy%20Dr%2C%20Lancaster%2C%20PA%2017603%2C%20USA!5e0!3m2!1sen!2s!4v1721746032973!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
