@@ -52,9 +52,9 @@
     border-top: 12px solid green;
     z-index: 1;
     width: 240px;
-    height: 40px;
+    height: 42px;
     background-color: white;
-    transform: translate(-10%, 84%) rotate(-14deg);
+    transform: translate(-10%, 80%) rotate(-14deg);
   }
 
   .triangle-1 {
@@ -62,9 +62,9 @@
     border-top: 12px solid green;
     z-index: 1;
     width: 240px;
-    height: 40px;
+    height: 42px;
     background-color: white;
-    transform: translate(85%, 78%) rotate(14deg);
+    transform: translate(85%, 82%) rotate(10deg);
   }
 
   @media (min-width: 300px) and (max-width: 768px) {
@@ -89,7 +89,7 @@
 
   @media (min-width: 769px) and (max-width: 1024px) {
     .triangle-1 {
-      transform: translate(75%, 78%) rotate(14deg);
+      transform: translate(75%, 75%) rotate(11deg);
     }
   }
 
@@ -141,7 +141,7 @@
 
   @media (min-width: 1419px) {
     .triangle-1 {
-      transform: translate(85%, 75%) rotate(14deg);
+      transform: translate(88%, 70%) rotate(13deg);
     }
   }
 }
