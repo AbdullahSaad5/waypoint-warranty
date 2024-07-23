@@ -125,18 +125,18 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-1 col-span-3 flex justify-center items-center text-center lg:text-left md:text-left lg:col-span-1 ">
+            <div className="md:col-span-1 flex justify-center items-center text-center lg:text-left md:text-left col-span-3 lg:col-span-1">
               <div>
                 <span className="font-bold">Contact Us</span>
-                <div className="flex flex-col space-y-2 mt-2 gap-4">
+                <div className="flex flex-col space-y-2 mt-2 gap-4 items-center md:items-start">
                   {addresses.map((address: Addressprops, index: number) => (
                     <a className="flex flex-row" key={index} href={address.href} target="_blank" rel="noreferrer">
                       <div className="flex justify-center items-center mr-4">
                         <div>{address.icon}</div>
                       </div>
                       <div className="flex flex-col">
-                        <span>{address.name}</span>
-                        <span>{address.location}</span>
+                        <span className="break-all">{address.name}</span>
+                        <span className="break-all">{address.location}</span>
                       </div>
                     </a>
                   ))}
