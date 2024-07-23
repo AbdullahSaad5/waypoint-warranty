@@ -158,15 +158,17 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
           Related Products
         </h3>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-y-8 mx-5 lg:gap-x-[3%] my-8">
-          {relatedProducts.map((relatedProduct: Products, index: number) => (
-            <ProductCard
-              key={index}
-              number={relatedProduct.number}
-              icon={relatedProduct.icon}
-              title={relatedProduct.title}
-              onClick={() => router.push(`/products/${createSlug(relatedProduct.title)}`)}
-            />
-          ))}
+          {relatedProducts
+            .sort((a, b) => a.number.localeCompare(b.number))
+            .map((relatedProduct: Products, index: number) => (
+              <ProductCard
+                key={index}
+                number={relatedProduct.number}
+                icon={relatedProduct.icon}
+                title={relatedProduct.title}
+                onClick={() => router.push(`/products/${createSlug(relatedProduct.title)}`)}
+              />
+            ))}
         </div>
       </section>
     </>
