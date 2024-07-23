@@ -19,9 +19,9 @@ const links: Link[] = [
   },
   {
     name: "Contact Us",
-    href: "/contact",
+    href: "/contact-us",
   },
-  { name: "About Us", href: "/about" },
+  { name: "About Us", href: "/about-us" },
 ];
 
 export default links;
