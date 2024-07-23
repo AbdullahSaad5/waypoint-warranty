@@ -150,7 +150,11 @@ export default function Footer() {
           <Divider />
           <div className="flex flex-col lg:flex-row justify-around items-center">
             <span className="text-sm text-center lg:text-lg md:text-base my-2">
-              2024 WAYPOINT WARRANTY.com, All rights reserved
+              2024{" "}
+              <a href="www.decimalsolution.com" target="_blank" rel="noreferrer">
+                Decimal Solution.
+              </a>{" "}
+              All Rights reserved
             </span>
           </div>
         </div>
