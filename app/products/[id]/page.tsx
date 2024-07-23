@@ -140,7 +140,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
       </main>
-      <section className="flex flex-col justify-center items-center my-5 mx-5">
+      {/* <section className="flex flex-col justify-center items-center my-5 mx-5">
         <h3 className="lg:text-4xl text-3xl text-primary font-medium my-5 lg:w-[600px] w-[300px] min-h-max text-center">
           About Product
         </h3>
@@ -152,7 +152,7 @@ const SpecificProduct = ({ params }: { params: { id: string } }) => {
             className="lg:w-[1000px] lg:h-[500px] min-w-[300px] min-h-[275px]"
           ></iframe>
         </div>
-      </section>
+      </section> */}
       <section className="flex flex-col justify-center items-center my-5 lg:mx-8">
         <h3 className="lg:text-4xl text-3xl text-primary font-medium my-5 min-w-[250px] lg:min-w-[600px] text-center">
           Related Products
