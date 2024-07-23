@@ -58,30 +58,30 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
-      //   const response = await sendEmail({
-      //     to: "waypointwarranty@gmail.com",
-      //     from: "waypointwarranty@gmail.com",
-      //     subject: `New Form Submission`,
-      //     message: `
-      //   Name: ${formData.name}
-      //   Phone Number: +1 ${formData.phoneNumber}
-      //   Email: ${formData.email}
-      //   Website: ${formData.website}
-      //   Comments: ${formData.comments}
-      // `,
-      //   });
-      //   if (response.message) {
-      toast.success("Response submitted successfully");
-      // setFormData({
-      //   name: "",
-      //   phoneNumber: "",
-      //   email: "",
-      //   website: "",
-      //   comments: "",
-      // });
-      // } else {
-      //   toast.error("Failed to submit response");
-      // }
+      const response = await sendEmail({
+        to: "waypointwarranty@gmail.com",
+        from: "waypointwarranty@gmail.com",
+        subject: `New Form Submission`,
+        message: `
+        Name: ${formData.name}
+        Phone Number: +1 ${formData.phoneNumber}
+        Email: ${formData.email}
+        Website: ${formData.website}
+        Comments: ${formData.comments}
+      `,
+      });
+      if (response.message) {
+        toast.success("Response submitted successfully");
+        setFormData({
+          name: "",
+          phoneNumber: "",
+          email: "",
+          website: "",
+          comments: "",
+        });
+      } else {
+        toast.error("Failed to submit response");
+      }
     } catch (error) {
       toast.error("Failed to submit response");
     } finally {

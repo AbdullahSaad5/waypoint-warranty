@@ -79,44 +79,44 @@ export default function Form() {
     setIsLoading(true);
 
     try {
-      //   const response = await sendEmail({
-      //     to: "waypointwarranty@gmail.com",
-      //     from: "waypointwarranty@gmail.com",
-      //     subject: `New Form Submission`,
-      //     message: `
-      //   First Name: ${formData.firstName}
-      //   Last Name: ${formData.lastName}
-      //   Phone Number: +1 ${formData.phoneNumber}
-      //   Email: ${formData.email}
-      //   Business Number: +1 ${formData.businessNumber}
-      //   Business Email: ${formData.businessEmail}
-      //   Business Address: ${formData.businessAddress}
-      //   City: ${formData.city}
-      //   State: ${formData.state}
-      //   Street: ${formData.street}
-      //   Zip Code: ${formData.zipCode}
-      //   Additional Notes: ${formData.additionalNotes}
-      // `,
-      //   });
-      // if (response.message) {
-      toast.success("Response submitted successfully");
-      // setFormData({
-      //   firstName: "",
-      //   lastName: "",
-      //   phoneNumber: "",
-      //   email: "",
-      //   businessNumber: "",
-      //   businessEmail: "",
-      //   businessAddress: "",
-      //   city: "",
-      //   state: "",
-      //   street: "",
-      //   zipCode: "",
-      //   additionalNotes: "",
-      // });
-      // } else {
-      //   toast.error("Failed to submit response");
-      // }
+      const response = await sendEmail({
+        to: "waypointwarranty@gmail.com",
+        from: "waypointwarranty@gmail.com",
+        subject: `New Form Submission`,
+        message: `
+        First Name: ${formData.firstName}
+        Last Name: ${formData.lastName}
+        Phone Number: +1 ${formData.phoneNumber}
+        Email: ${formData.email}
+        Business Number: +1 ${formData.businessNumber}
+        Business Email: ${formData.businessEmail}
+        Business Address: ${formData.businessAddress}
+        City: ${formData.city}
+        State: ${formData.state}
+        Street: ${formData.street}
+        Zip Code: ${formData.zipCode}
+        Additional Notes: ${formData.additionalNotes}
+      `,
+      });
+      if (response.message) {
+        toast.success("Response submitted successfully");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          phoneNumber: "",
+          email: "",
+          businessNumber: "",
+          businessEmail: "",
+          businessAddress: "",
+          city: "",
+          state: "",
+          street: "",
+          zipCode: "",
+          additionalNotes: "",
+        });
+      } else {
+        toast.error("Failed to submit response");
+      }
     } catch (error) {
       toast.error("Failed to submit response");
     } finally {
@@ -313,11 +313,7 @@ export default function Form() {
             }`}
             disabled={isLoading}
           >
-            {isLoading ? (
-              <span className="loading loading-spinner loading-sm"></span>
-            ) : (
-              "Submit"
-            )}
+            {isLoading ? <span className="loading loading-spinner loading-sm"></span> : "Submit"}
           </button>
         </div>
       </div>
