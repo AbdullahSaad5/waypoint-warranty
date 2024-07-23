@@ -19,7 +19,7 @@ export default function Footer() {
   type Addressprops = {
     icon: ReactElement;
     name: string;
-    location: string;
+    location?: string;
   };
 
   const addresses: Addressprops[] = [
@@ -30,13 +30,11 @@ export default function Footer() {
     },
     {
       icon: <Phone />,
-      name: "2173 Embassy Drive",
-      location: "Lancaster, PA 17603",
+      name: "(408) 389-5470",
     },
     {
       icon: <Mail />,
-      name: "2173 Embassy Drive",
-      location: "Lancaster, PA 17603",
+      name: "info@waypointwarrantysolutions.com",
     },
   ];
 
@@ -54,8 +52,13 @@ export default function Footer() {
                   type="email"
                   placeholder="Your email address"
                   className="rounded-md w-full lg:text-base text-sm lg:p-2 lg:pr-16 lg:py-3 text-black p-2 pr-10 py-1"
+                  requiredx
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                 />
-                <button className="absolute -right-1 lg:top-1 xl:top-1 xl:p-2 py-1 mr-2 bg-primary lg:p-2 px-1 lg:py-2 xl:py-2 lg:text-base text-xs rounded-md">
+                <button
+                  onClick={() => {}}
+                  className="absolute -right-1 lg:top-1 xl:top-1 xl:p-2 py-1 mr-2 bg-primary lg:p-2 px-1 lg:py-2 xl:py-2 lg:text-base text-xs rounded-md"
+                >
                   Subscribe
                 </button>
               </div>
@@ -88,7 +91,7 @@ export default function Footer() {
             <div className="md:col-span-1 col-span-3 flex justify-center items-center text-center lg:text-left md:text-left lg:col-span-1 ">
               <div>
                 <span className="font-bold">Contact Us</span>
-                <div className="flex flex-col space-y-2 mt-2">
+                <div className="flex flex-col space-y-2 mt-2 gap-4">
                   {addresses.map((address: Addressprops, index: number) => (
                     <div className="flex flex-row" key={index}>
                       <div className="flex justify-center items-center mr-4">
@@ -108,9 +111,6 @@ export default function Footer() {
           <div className="flex flex-col lg:flex-row justify-around items-center">
             <span className="text-sm text-center lg:text-lg md:text-base my-2">
               2024 WAYPOINT WARRANTY.com, All rights reserved
-            </span>
-            <span className="text-sm text-center lg:text-lg md:text-base my-2">
-              Terms & Conditions . Privacy Notice
             </span>
           </div>
         </div>
