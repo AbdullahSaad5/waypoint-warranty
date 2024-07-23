@@ -4,9 +4,13 @@ import Link from "next/link";
 import Divider from "../Divider";
 import links from "@/app/links";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const products: string[] = [
     "GAP",
     "Tire and Road Hazard",
@@ -30,13 +34,31 @@ export default function Footer() {
     },
     {
       icon: <Phone />,
-      name: "(408) 389-5470",
+      name: "+1 (408) 389-5470",
     },
     {
       icon: <Mail />,
       name: "info@waypointwarrantysolutions.com",
     },
   ];
+
+  const handleSubscribe = () => {
+    if (email === "") {
+      setError("Please enter your email address");
+      return;
+    } else if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email) === false) {
+      setError("Make sure you have entered a valid email address");
+      return;
+    }
+
+    setError("");
+    setLoading(true);
+    setTimeout(() => {
+      toast.success("You have successfully subscribed to our newsletter");
+      setEmail("");
+      setLoading(false);
+    }, 2000);
+  };
 
   return (
     <>
@@ -51,15 +73,22 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="rounded-md w-full lg:text-base text-sm lg:p-2 lg:pr-16 lg:py-3 text-black p-2 pr-10 py-1"
-                  requiredx
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  className={`rounded-md w-full lg:text-base text-sm lg:p-2 lg:pr-16 lg:py-3 text-black p-2 pr-10 py-1 ${
+                    error ? "border-red-500 text-red-500" : "border-none text-black"
+                  }`}
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
+                {error && <span className="absolute bottom-[-20px] left-0 text-xs text-white">{error}</span>}
                 <button
-                  onClick={() => {}}
-                  className="absolute -right-1 lg:top-1 xl:top-1 xl:p-2 py-1 mr-2 bg-primary lg:p-2 px-1 lg:py-2 xl:py-2 lg:text-base text-xs rounded-md"
+                  onClick={() => handleSubscribe()}
+                  disabled={loading}
+                  className={`absolute -right-1 lg:top-1 xl:top-1 xl:p-2 py-1 mr-2 bg-primary lg:p-2 px-1 lg:py-2 xl:py-2 lg:text-base text-xs rounded-md ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 >
-                  Subscribe
+                  {loading ? <span className="loading loading-spinner loading-sm"></span> : "Subscribe"}
                 </button>
               </div>
             </div>
