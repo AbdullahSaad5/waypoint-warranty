@@ -126,7 +126,7 @@ export default function LandingPage() {
       </section>
       <section className="bg-secondaryBg flex justify-center items-center py-5 px-10">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 md:col-span-1 md:gap-x-16 lg:gap-x-10 lg:gap-y-10 md:gap-y-6 gap-y-5 lg:col-span-1 my-12">
-          {productDetails.slice(0, 6).map((product, index: number) => (
+          {productDetails.map((product, index: number) => (
             <ProductCard
               key={product.number}
               number={product.number}
