@@ -32,7 +32,7 @@ export default function Footer() {
     {
       icon: <Phone />,
       name: "+1 (717) 431-3113",
-      href: "tel:+14083895470",
+      href: "tel:+17174313113",
     },
     {
       icon: <Mail />,
