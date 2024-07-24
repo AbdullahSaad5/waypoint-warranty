@@ -104,7 +104,7 @@ export default function LandingPage() {
         <div className="flex flex-col justify-center items-center my-5">
           <h1 className="text-primary font-bold text-3xl lg:text-5xl md:text-4xl my-4">About Us</h1>
         </div>
-        <div className="flex lg:flex-row flex-col-reverse justify-center items-stretch max-w-[1400px] w-full gap-12  px-12">
+        <div className="flex lg:flex-row flex-col-reverse justify-center items-stretch max-w-[1520px] w-full gap-12  px-12">
           <div className="flex-1">
             <Image
               src={Image4}
