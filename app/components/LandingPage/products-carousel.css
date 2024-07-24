@@ -1,0 +1,37 @@
+.embla {
+  max-width: 1500px;
+  position: relative;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__prev {
+  z-index: 10;
+  cursor: pointer;
+}
+
+.embla__next {
+  z-index: 10;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .embla__prev {
+    transform: translateX(-100%);
+    z-index: 10;
+  }
+  .embla__next {
+    transform: translateX(100%);
+    z-index: 10;
+  }
+}

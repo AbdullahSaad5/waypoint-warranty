@@ -12,6 +12,8 @@ import CardImage3 from "@/public/card-image-3.png";
 import { useRouter } from "next/navigation";
 import { Inter } from "next/font/google";
 import { createSlug } from "@/app/utils/createSlug";
+import dynamic from "next/dynamic";
+const ProductsCarousel = dynamic(() => import("./products-carousel"), { ssr: false, loading: () => <p>Loading...</p> });
 
 const inter = Inter({
   weight: ["400"],
@@ -125,17 +127,7 @@ export default function LandingPage() {
         </div>
       </section>
       <section className="bg-secondaryBg flex justify-center items-center py-5 px-10">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 md:col-span-1 md:gap-x-16 lg:gap-x-10 lg:gap-y-10 md:gap-y-6 gap-y-5 lg:col-span-1 my-12">
-          {productDetails.map((product, index: number) => (
-            <ProductCard
-              key={product.number}
-              number={product.number}
-              icon={product.icon}
-              title={product.title}
-              onClick={() => router.push(`/products/${createSlug(product.title)}`)}
-            />
-          ))}
-        </div>
+        <ProductsCarousel />
       </section>
       <section className="bg-[#FDFFFC] p-1 mx-5">
         <h4 className="flex flex-col justify-center items-center my-6 text-center">
