@@ -206,7 +206,7 @@ export default function Contact() {
       </section>
       <section className="bg-primaryBg lg:px-[100px] md:px-[60px] px-[30px]">
         <div className="flex lg:flex-row justify-center flex-col items-center  box-content my-10 mx-6">
-          <div className="w-full lg:h-[180px] h-[150px] border border-gray-300 flex flex-col  justify-center items-center gap-4">
+          <div className="w-full lg:h-[180px] h-[150px] border border-gray-300 px-4 flex flex-col  justify-center items-center gap-4">
             <div>
               <svg
                 version="1.0"
@@ -227,10 +227,10 @@ export default function Contact() {
             </div>
             <div className="flex flex-col justify-center items-center text-center">
               <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Office Address</p>
-              <p className="lg:text-lg">2173 Embassy Drive Lancaster, PA 17603</p>
+              <p className="text-sm mt-1">2173 Embassy Drive Lancaster, PA 17603</p>
             </div>
           </div>
-          <div className="w-full lg:h-[180px]  h-[150px] border border-gray-300 flex flex-col justify-center items-center gap-4">
+          <div className="w-full lg:h-[180px]  h-[150px] border border-gray-300 px-4 flex flex-col justify-center items-center gap-4">
             <div>
               <svg width="60px" height="60px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -241,12 +241,12 @@ export default function Contact() {
             </div>
             <div className="flex flex-col justify-center items-center text-center">
               <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Phone Number</p>
-              <a href="tel:+1 (717) 431-3113" className="lg:text-lg">
+              <a href="tel:+1 (717) 431-3113" className="text-sm mt-1">
                 +1 (717) 431-3113
               </a>
             </div>
           </div>
-          <div className="w-full lg:h-[180px]  h-[150px] border border-gray-300 flex flex-col justify-center items-center gap-4">
+          <div className="w-full lg:h-[180px]  h-[150px] border border-gray-300 px-4 flex flex-col justify-center items-center gap-4">
             <div>
               <svg
                 height="60px"
@@ -275,7 +275,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-col justify-center items-center text-center">
               <p className={`lg:text-2xl text-secondaryText font-semibold ${inter.className}`}>Mail Address</p>
-              <a href="mailto:info@waypointwarrantysolutions.com" target="_blank" className="break-all">
+              <a href="mailto:info@waypointwarrantysolutions.com" target="_blank" className="break-all text-sm mt-1">
                 info@waypointwarrantysolutions.com
               </a>
             </div>
