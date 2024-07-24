@@ -33,25 +33,6 @@
 
   .custom-circle-list li {
     @apply pl-16 relative; /* Adjust padding based on the size of your icon */
-    margin-left: 4rem; /* Adjust the margin based on your preference */
-  }
-
-  @media screen and (max-width: 768px) {
-    .custom-circle-list li {
-      margin-left: 2rem;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .custom-circle-list li {
-      margin-left: 1rem;
-    }
-  }
-
-  @media screen and (max-width: 450px) {
-    .custom-circle-list li {
-      margin-left: 0;
-    }
   }
 
   .custom-circle-list li::before {

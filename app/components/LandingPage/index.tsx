@@ -100,19 +100,25 @@ export default function LandingPage() {
           />
         </div>
       </section>
-      <section className="m-8">
+      <section className="mt-8 mb-28 flex flex-col items-center">
         <div className="flex flex-col justify-center items-center my-5">
           <h1 className="text-primary font-bold text-3xl lg:text-5xl md:text-4xl my-4">About Us</h1>
         </div>
-        <div className="flex lg:flex-row flex-col-reverse justify-center items-center">
-          <div>
-            <Image src={Image4} alt="Home image" className="w-[500px]" />
+        <div className="flex lg:flex-row flex-col-reverse justify-center items-stretch max-w-[1400px] w-full gap-12  px-12">
+          <div className="flex-1">
+            <Image
+              src={Image4}
+              alt="Home image"
+              className="w-full h-full aspect-auto object-cover object-right lg:min-w-[500px]"
+            />
           </div>
-          <div className="flex flex-col justify-start items-center">
-            <h1 className="text-secondaryText font-bold text-3xl lg:text-5xl md:text-4xl my-4">Waypoint Offers</h1>
-            <ul className="custom-circle-list lg:w-[550px] w-fit">
+          <div className="flex flex-col justify-start flex-1 gap-4">
+            <h1 className="text-secondaryText font-bold text-3xl lg:text-5xl md:text-4xl mb-4 lg:mb-0">
+              Waypoint Offers
+            </h1>
+            <ul className="custom-circle-list w-fit h-full flex flex-col justify-center gap-8 lg:gap-12">
               {offers.map((offer: string, index: number) => (
-                <li key={index} className="my-5 lg:text-3xl md:text-2xl text-xl font-medium">
+                <li key={index} className="lg:text-3xl md:text-2xl text-xl font-medium">
                   {offer}
                 </li>
               ))}
@@ -120,13 +126,13 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-      <section className="relative grid h-[calc(60vh-8rem)] min-h-[400px] w-full place-items-center object-cover">
-        <div className="absolute inset-0 bg-[#0c2748] z-[2] "></div>
+      <section className="relative grid  min-h-[400px] w-full place-items-center object-cover">
+        <div className="absolute inset-0 bg-[#1F60B2] z-[2] "></div>
         <div className="z-[3] flex items-center text-center text-primaryText">
           <h1 className="text-4xl lg:text-6xl font-bold">Products We Offer</h1>
         </div>
       </section>
-      <section className="bg-secondaryBg flex justify-center items-center py-5 px-10">
+      <section className="bg-secondaryBg flex justify-center items-center py-5 px-10  pt-12 pb-24">
         <ProductsCarousel />
       </section>
       <section className="bg-[#FDFFFC] p-1 mx-5">
